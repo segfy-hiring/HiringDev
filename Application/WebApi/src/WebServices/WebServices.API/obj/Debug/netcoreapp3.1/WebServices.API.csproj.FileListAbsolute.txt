@@ -1,0 +1,5 @@
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.API\obj\Debug\netcoreapp3.1\WebServices.API.csprojAssemblyReference.cache
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.API\obj\Debug\netcoreapp3.1\WebServices.API.MvcApplicationPartsAssemblyInfo.cs
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.API\obj\Debug\netcoreapp3.1\WebServices.API.MvcApplicationPartsAssemblyInfo.cache
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.API\obj\Debug\netcoreapp3.1\WebServices.API.AssemblyInfoInputs.cache
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.API\obj\Debug\netcoreapp3.1\WebServices.API.AssemblyInfo.cs

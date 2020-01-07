@@ -1,0 +1,13 @@
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.Core\bin\Debug\netcoreapp3.1\WebServices.Core.deps.json
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.Core\bin\Debug\netcoreapp3.1\WebServices.Core.dll
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.Core\bin\Debug\netcoreapp3.1\WebServices.Core.pdb
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.Core\bin\Debug\netcoreapp3.1\WebServices.Domain.dll
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.Core\bin\Debug\netcoreapp3.1\WebServices.Infra.dll
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.Core\bin\Debug\netcoreapp3.1\WebServices.Domain.pdb
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.Core\bin\Debug\netcoreapp3.1\WebServices.Infra.pdb
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.Core\obj\Debug\netcoreapp3.1\WebServices.Core.csprojAssemblyReference.cache
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.Core\obj\Debug\netcoreapp3.1\WebServices.Core.AssemblyInfoInputs.cache
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.Core\obj\Debug\netcoreapp3.1\WebServices.Core.AssemblyInfo.cs
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.Core\obj\Debug\netcoreapp3.1\WebServices.Core.csproj.CopyComplete
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.Core\obj\Debug\netcoreapp3.1\WebServices.Core.dll
+C:\DotNet\Workspace\YoutubeApi\Proejct\WebApi\src\WebServices\WebServices.Core\obj\Debug\netcoreapp3.1\WebServices.Core.pdb

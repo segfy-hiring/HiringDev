@@ -1,0 +1,106 @@
+/* ========================================================================
+   Component: user-block.less
+ ========================================================================== */
+
+@user-thumbnail-color:      @brand-primary;
+@margin-tp:                 @margin-top;  
+
+.img-thumbnail-no-image{
+    background-color: #efefef;
+    border: 3px solid #e1e2e3;
+    padding: 28px 32px;
+    color: @user-thumbnail-color;
+}
+
+.aside-collapsed .user-block > .user-block-picture .img-thumbnail-no-image,
+.aside-collapsed-text .user-block > .user-block-picture .img-thumbnail-no-image{
+    padding: 11.5px 17px;
+}
+
+ // for use as navbar item
+.has-user-block {
+  display: block;
+  overflow: hidden;
+  border: 0 !important;
+  width: 100% !important;
+  margin-top: @margin-tp;
+}
+
+.user-block {
+  position: relative;
+  padding: 25px 0 10px;
+  cursor: pointer;
+  .clearfix;
+
+  background: url('../img/Linha_lateral_youtube.png') no-repeat left top;
+  background-size: contain;
+
+  > .user-block-picture {
+    position: relative;
+    width: 90px;
+    margin: 0 auto;
+    > img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .user-block-info {
+    padding-top: 15px;
+    text-align: center;
+    white-space: nowrap;
+    .user-block-name,
+    .user-block-role {
+      display: block;
+    }
+
+    .user-block-name {
+      color: #585D66;
+    }
+    .user-block-role {
+      font-size: 12px;
+      color: #777B83;
+    }
+  }
+}
+
+.user-block-status {
+  position: relative;
+  > .circle {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    border: 2px solid #fff;
+  }
+}
+
+// Adapt to collapsed mode
+.aside-collapsed,
+.aside-collapsed-text {
+
+  .user-block {
+    padding: 15px 0 14px;
+    margin: 0;
+    text-align: center;
+
+    > .user-block-picture {
+      float: none;
+      margin: 0  auto;
+      width: 50px;
+      > .user-block-status {
+        display: block;
+      }
+    }
+    .user-block-info {
+      display: none;
+    }
+  }
+
+  .user-block-status {
+    > .circle {
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
