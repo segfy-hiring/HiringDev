@@ -1,0 +1,37 @@
+﻿    .md-errors-spacer:empty {
+        display: none;
+    }
+
+.md-fab-bottom-right {
+    top: auto;
+    right: 15px;
+    bottom: 60px;
+    left: auto;
+    position: fixed !important;
+}
+
+@media (max-width: 960px) {
+    .md-fab-bottom-right {
+        right: 5px !important;
+        bottom: 20px !important;
+    }
+}
+
+.md-fab-primary {
+    background-color: #0e78c5 !important;
+}
+
+    .md-fab-primary .material-icons {
+        font-size: 35px;
+        height: 35px;
+        width: 35px;
+    }
+
+/*
+    Corrige um problema com o Bootstrap DatePicker, quando ele está dentro de uma modal ou de um card
+    https://stackoverflow.com/questions/42892584/angular-material-md-datepicker-inside-bootstrap-modal/43673907
+*/
+
+.md-datepicker-calendar-pane {
+    z-index: 1200;
+}

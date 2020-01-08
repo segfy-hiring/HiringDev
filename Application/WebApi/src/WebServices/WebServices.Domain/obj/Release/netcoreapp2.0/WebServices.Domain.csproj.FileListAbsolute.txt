@@ -1,0 +1,11 @@
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Domain\bin\Release\netcoreapp2.0\WebServices.Domain.deps.json
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Domain\bin\Release\netcoreapp2.0\WebServices.Domain.dll
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Domain\bin\Release\netcoreapp2.0\WebServices.Domain.pdb
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Domain\bin\Release\netcoreapp2.0\WebServices.Infra.dll
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Domain\bin\Release\netcoreapp2.0\WebServices.Infra.pdb
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Domain\obj\Release\netcoreapp2.0\WebServices.Domain.csprojAssemblyReference.cache
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Domain\obj\Release\netcoreapp2.0\WebServices.Domain.AssemblyInfoInputs.cache
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Domain\obj\Release\netcoreapp2.0\WebServices.Domain.AssemblyInfo.cs
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Domain\obj\Release\netcoreapp2.0\WebServices.Domain.csproj.CopyComplete
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Domain\obj\Release\netcoreapp2.0\WebServices.Domain.dll
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Domain\obj\Release\netcoreapp2.0\WebServices.Domain.pdb

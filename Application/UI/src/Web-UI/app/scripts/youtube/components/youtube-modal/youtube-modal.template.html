@@ -1,0 +1,96 @@
+<md-dialog-content>
+    <div class="md-dialog-content" layout="column">
+        <h2 class="md-title mt-sm">Details</h2>
+        <div layout="row" flex=100>
+
+            <div ng-show="$ctrl.model.type == 2" layout="column" flex="100" layout-align="center center">
+                <div layout="row" id="youtubeVideo" flex="100" style="width: 100%;">
+
+                </div>
+                <div layout="row" flex="100">
+                    <div layout="column" layout-align="center center" layout-padding="5">
+                        <md-button class="md-fab md-primary" aria-label="pageview">
+                            <md-tooltip md-direction="bottom">pageview</md-tooltip>
+                            <md-icon style="width: 24px; height: 24px">
+                                <i class="material-icons">
+                                    pageview
+                                </i>
+                            </md-icon>
+                        </md-button>
+                        <i>{{$ctrl.model.viewCount}}</i>
+                        <i>Views</i>
+                    </div>
+                    <div layout="column" layout-align="center center" layout-padding="5">
+                        <md-button class="md-fab md-primary" aria-label="pageview">
+                            <md-tooltip md-direction="bottom">pageview</md-tooltip>
+                            <md-icon style="width: 24px; height: 24px">
+                                <i class="material-icons">
+                                    thumb_up
+                                </i>
+                            </md-icon>
+                        </md-button>
+                        <i>{{$ctrl.model.likeCount}}</i>
+                        <i>Likes</i>
+                    </div>
+                    <div layout="column" layout-align="center center" layout-padding="5">
+                        <md-button class="md-fab md-primary" aria-label="pageview">
+                            <md-tooltip md-direction="bottom">pageview</md-tooltip>
+                            <md-icon style="width: 24px; height: 24px">
+                                <i class="material-icons">
+                                    thumb_down
+                                </i>
+                            </md-icon>
+                        </md-button>
+                        <i>{{$ctrl.model.dislikeCount}}</i>
+                        <i>Dislikes</i>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-show="$ctrl.model.type == 1" layout="row" flex="100" layout-align="center center">
+
+                <div layout="column" layout-align="center center" layout-padding="5">
+                    <md-button class="md-fab md-primary" aria-label="pageview">
+                        <md-tooltip md-direction="bottom">pageview</md-tooltip>
+                        <md-icon style="width: 24px; height: 24px">
+                            <i class="material-icons">
+                                pageview
+                            </i>
+                        </md-icon>
+                    </md-button>
+                    <i>{{$ctrl.model.viewCount}}</i>
+                    <i>Total views</i>
+                </div>
+
+                <div layout="column" layout-align="center center" layout-padding="5">
+                    <md-button class="md-fab md-primary" aria-label="pageview">
+                        <md-tooltip md-direction="bottom">pageview</md-tooltip>
+                        <md-icon style="width: 24px; height: 24px">
+                            <i class="material-icons">
+                                video_library
+                            </i>
+                        </md-icon>
+                    </md-button>
+                    <i>{{$ctrl.model.videoCount}}</i>
+                    <i>Video count</i>
+                </div>
+
+                <div layout="column" layout-align="center center" layout-padding="5">
+                    <md-button class="md-fab md-primary" aria-label="pageview">
+                        <md-tooltip md-direction="bottom">pageview</md-tooltip>
+                        <md-icon style="width: 24px; height: 24px">
+                            <i class="material-icons">
+                                video_library
+                            </i>
+                        </md-icon>
+                    </md-button>
+                    <i>{{$ctrl.model.subscriberCount}}</i>
+                    <i>subscriptions</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</md-dialog-content>
+<md-dialog-actions>
+    <button class="md-button md-raised" type="button" ng-click="$ctrl.close()">Close</button>
+</md-dialog-actions> 

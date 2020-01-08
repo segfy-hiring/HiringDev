@@ -1,0 +1,25 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.4.0",
+    "angular-route": "^1.7.9",
+    "angular-bootstrap": "^2.5.0",
+    "angular-cookies": "^1.6.8",
+    "angular-sanitize": "^1.6.8",  
+    "angular-material": "^1.1.5",
+    "angular-moment": "^1.2.0",    
+    "angular-ui-router": "^1.0.12",
+    "bootstrap-css-only": "^3.3.7",
+    "components-font-awesome": "^4.7.0",
+    "font-awesome-animation": "^0.1.0",
+    "jquery": "^3.2.1",
+    "material-design-icons-iconfont": "^3.0.3",
+    "ngstorage": "^0.3.11" 
+  },
+  "resolutions": {
+    "angular": "1.6.10"
+  },
+  "appPath": "app",
+  "moduleName": "app"
+}

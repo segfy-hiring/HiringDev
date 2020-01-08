@@ -1,0 +1,9 @@
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Infra\bin\Release\netstandard2.0\WebServices.Infra.deps.json
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Infra\bin\Release\netstandard2.0\WebServices.Infra.dll
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Infra\bin\Release\netstandard2.0\WebServices.Infra.pdb
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Infra\obj\Release\netstandard2.0\WebServices.Infra.csprojAssemblyReference.cache
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Infra\obj\Release\netstandard2.0\WebServices.Infra.sourcelink.json
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Infra\obj\Release\netstandard2.0\WebServices.Infra.AssemblyInfoInputs.cache
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Infra\obj\Release\netstandard2.0\WebServices.Infra.AssemblyInfo.cs
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Infra\obj\Release\netstandard2.0\WebServices.Infra.dll
+C:\DotNet\Workspace\YoutubeApi\Project\WebApi\src\WebServices\WebServices.Infra\obj\Release\netstandard2.0\WebServices.Infra.pdb

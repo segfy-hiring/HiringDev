@@ -1,0 +1,72 @@
+<div layout="column">
+    <div layout="row" layout-align="center center" layout-margin="">
+        <img src="/images/logo.png" width="300" height="100" />
+    </div>
+    <div layout="row" layout-align="center center">
+        <md-input-container class="md-block" flex="30" flex-md="50" flex-sm="70" flex-xs="70">
+            <label>Search on youtube</label>
+            <input md-maxlength="50" required md-no-asterisk name="description" ng-model="$ctrl.search">
+        </md-input-container>
+    </div>
+    <div layout="row" flex="100" layout-align="center center">
+        <section layout="row" layout-sm="row" layout-wrap>
+            <md-button class="md-button md-raised" ng-click="$ctrl.searchVideoYoutube();">Search video</md-button>
+            <md-button class="md-button md-raised" ng-click="$ctrl.searchChannelYoutube();">Search channel</md-button>
+        </section>
+    </div>
+    <div layout="row" flex="100" layout-align="center center">
+        <h4>This application it's just a usage demonstration of Youtube API Data V3</h4>
+    </div>
+</div>
+<div layout="row" layout-align="center center" loading>
+    <div>
+        <img src="/images/loading2.gif" />
+    </div>
+</div>
+
+<div layout="row" layout-margin="" layout-wrap layout-align="center center">
+
+    <md-card md-theme="default" layout-padding="" ng-repeat="item in $ctrl.result.youtubeData">
+        <img ng-src="{{item.thumbnailUrl}}" height="100" class="md-card-image">
+        <md-card-title>
+            <md-card-title-text>
+                <span md-truncate class="md-headline" style="width: 250px">{{item.title}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <p md-truncate>{{item.channelTitle}}</p>
+            <p ng-if="item.publishedAt != null">Published at: {{item.publishedAt | date:'dd/MM/yyyy HH:mm:ss'}}</p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="$ctrl.showDetails(item);">Details</md-button>
+        </md-card-actions>
+    </md-card>
+
+
+
+</div>
+<div layout="column" class="md-fab-bottom-right docs-scroll-fab scrolling">
+
+    <md-button ng-if="$ctrl.result.previousPage != null" class="md-fab md-primary" ng-click="$ctrl.previousPage($ctrl.result.previousPage);">
+        <md-tooltip md-delay="2" md-direction="top">
+            Previous page
+        </md-tooltip>
+        <md-icon>
+            <i class="material-icons">
+                keyboard_arrow_left
+            </i>
+        </md-icon>
+    </md-button>
+    <md-button ng-show="$ctrl.result.nextPage != null" class="md-fab md-primary" ng-click="$ctrl.nextPage($ctrl.result.nextPage);">
+        <md-tooltip md-delay="2" md-direction="bottom">
+            Next page
+        </md-tooltip>
+        <md-icon>
+            <i class="material-icons">
+                keyboard_arrow_right
+            </i>
+        </md-icon>
+    </md-button>
+</div>
+
+
