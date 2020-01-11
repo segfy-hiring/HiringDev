@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTube", "RTube\RTube.csproj", "{5C8997B7-EDFC-4352-93A7-82B725F7D16B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTube", "RTube\RTube.csproj", "{5C8997B7-EDFC-4352-93A7-82B725F7D16B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{ED21B83E-285E-4CB9-A559-1A428589480C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5C8997B7-EDFC-4352-93A7-82B725F7D16B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C8997B7-EDFC-4352-93A7-82B725F7D16B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C8997B7-EDFC-4352-93A7-82B725F7D16B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED21B83E-285E-4CB9-A559-1A428589480C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED21B83E-285E-4CB9-A559-1A428589480C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED21B83E-285E-4CB9-A559-1A428589480C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED21B83E-285E-4CB9-A559-1A428589480C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

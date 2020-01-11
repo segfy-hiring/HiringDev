@@ -1,5 +1,6 @@
 ﻿using RTube.Context;
 using RTube.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace RTube.Repositories
@@ -16,18 +17,23 @@ namespace RTube.Repositories
         public void Save(YouTubeItem item)
         {
             _context.Items.Add(item);
-            _context.SaveChangesAsync();
+            _context.SaveChanges();
         }
 
         public void Update(YouTubeItem item)
         {
             _context.Items.Update(item);
-            _context.SaveChangesAsync();
+            _context.SaveChanges();
         }
 
         public bool Exists(YouTubeItem item)
         {
             return _context.Items.Any(i => i.Id == item.Id);
+        }
+
+        public IEnumerable<YouTubeItem> List()
+        {
+            return _context.Items.OrderByDescending(i=>i.SearchedAT).ToList();
         }
     }
 }

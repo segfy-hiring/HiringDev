@@ -48,5 +48,7 @@ namespace RTube.Models
         public string ChannelTitle { get; set; }
 
         public string Thumbnail { get; set; }
+
+        public DateTime SearchedAT { get; private set; } = DateTime.Now;
     }
 }

@@ -21,6 +21,11 @@ namespace RTube.Services
             _repository = repository;
         }
 
+        public IEnumerable<YouTubeItem> GetSearchHistory()
+        {
+            return _repository.List();
+        }
+
         public async Task<YouTubeResult> Search(string query, string pageToken = null)
         { 
             var client = new HttpClient();
@@ -52,9 +57,9 @@ namespace RTube.Services
             foreach(var item in items)
             {
                 if (_repository.Exists(item))
-                    _repository.Save(item);
-                else
                     _repository.Update(item);
+                else
+                    _repository.Save(item);
             }
         }
     }

@@ -36,6 +36,9 @@ namespace RTube.Migrations
                     b.Property<DateTime>("PublishedAt")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<DateTime>("SearchedAT")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<string>("Thumbnail")
                         .HasColumnType("text");
 
