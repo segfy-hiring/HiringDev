@@ -16,13 +16,13 @@ namespace RTube.Repositories
         public void Save(YouTubeItem item)
         {
             _context.Items.Add(item);
-            _context.SaveChanges();
+            _context.SaveChangesAsync();
         }
 
         public void Update(YouTubeItem item)
         {
             _context.Items.Update(item);
-            _context.SaveChanges();
+            _context.SaveChangesAsync();
         }
 
         public bool Exists(YouTubeItem item)
