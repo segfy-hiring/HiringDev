@@ -56,7 +56,7 @@ export class Search extends Component {
             .then(response => response.json())
             .catch(error => {
                 this.setState({
-                    errorMessage: 'Cannot retrieve api data, probably we exceeded quota',
+                    errorMessage: 'Cannot retrieve api data, sorry we probably exceeded quota',
                     loading: false
                 });
             })
