@@ -1,5 +1,6 @@
 ﻿using RTube.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace RTube.Repositories
 {
@@ -9,6 +10,6 @@ namespace RTube.Repositories
         void Save(YouTubeItem item);
         void Update(YouTubeItem item);
 
-        IEnumerable<YouTubeItem> List();
+        IQueryable<YouTubeItem> List();
     }
 }

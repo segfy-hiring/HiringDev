@@ -1,4 +1,5 @@
 ﻿using RTube.Models;
+using RTube.Models.Pagination;
 using RTube.Models.Result;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,6 +10,6 @@ namespace RTube.Services
     {
         Task<YouTubeResult> Search(string query, string pageToken = null);
 
-        IEnumerable<YouTubeItem> GetSearchHistory();
+        PagedSearchHistory GetSearchHistory(SearchHistoryPagination pagination);
     }
 }

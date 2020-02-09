@@ -1,12 +1,15 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using RTube.Models;
+using RTube.Models.Pagination;
 using RTube.Models.Result;
 using RTube.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using static RTube.Models.Pagination.SearchHistoryExtensions;
 
 namespace RTube.Services
 {
@@ -21,9 +24,10 @@ namespace RTube.Services
             _repository = repository;
         }
 
-        public IEnumerable<YouTubeItem> GetSearchHistory()
+        public PagedSearchHistory GetSearchHistory(SearchHistoryPagination pagination)
         {
-            return _repository.List();
+            return _repository.List()
+                .ToPagedSearchHistory(pagination);
         }
 
         public async Task<YouTubeResult> Search(string query, string pageToken = null)

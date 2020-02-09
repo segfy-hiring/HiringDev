@@ -31,9 +31,9 @@ namespace RTube.Repositories
             return _context.Items.Any(i => i.Id == item.Id);
         }
 
-        public IEnumerable<YouTubeItem> List()
+        public IQueryable<YouTubeItem> List()
         {
-            return _context.Items.OrderByDescending(i=>i.SearchedAT).ToList();
+            return _context.Items.OrderByDescending(i=>i.SearchedAT);
         }
     }
 }

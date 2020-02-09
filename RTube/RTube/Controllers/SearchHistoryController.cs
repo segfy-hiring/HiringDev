@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RTube.Models;
+using RTube.Models.Pagination;
 using RTube.Services;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,9 @@ namespace RTube.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<YouTubeItem> Get()
+        public IActionResult Get([FromQuery] SearchHistoryPagination pagination)
         {
-            return _youTubeService.GetSearchHistory();
+            return Ok(_youTubeService.GetSearchHistory(pagination));
         }
     }
 }
