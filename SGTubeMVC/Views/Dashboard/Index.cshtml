@@ -1,0 +1,92 @@
+﻿@model SGTubeMVC.Models.DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<link rel="stylesheet" href="~/css/dashboard.css" />
+<link rel="stylesheet" href="~/css/list.css" />
+
+<div class="container">
+    <div class="content_search">
+        <img src="~/assets/logo.png" alt="" />
+
+        <div class="content">
+            <div>
+                <form asp-controller="Search" asp-action="Create" method="post">
+                    <p>Utilize a caixa abaixo para pesquisa</p>
+                    <input asp-for="search" type="search" placeholder="Buscar" />
+                    <button class="btn">Buscar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="content_history">
+            <form asp-controller="Dashboard" asp-action="Index" method="post">
+                <table id="historical">
+                    <thead>
+                        <tr>
+                            <th><p>Últimas Pesquisas</p></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.history)
+                        {
+                            @if (item != null && !string.IsNullOrEmpty(item.Title))
+                            {
+                                <tr>
+                                    <td>
+                                        @*<input name="historyClick" asp-for="search" value="@item.Title" onclick="location.href='@Url.Action("Index", "Dashboard")'" />*@
+                                        @Html.ActionLink(@item.Title, "Index", "Dashboard", new { texto = item.Title }, new { @class = "historical-td-actionLink" })
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="content_dashboard">
+        @if (Model.videos.Count() > 0)
+        {
+            <p>Vídeos</p>
+            <ul class="spot-list">
+                @foreach (var item in Model.videos)
+                {
+                    <li onclick="">
+                        <button id="idVideo" style="display:none" value="@item.Id.VideoId"></button>
+                        <img src="@item.Snippet.Thumbnails.High.Url" alt="" />
+                        <p>@item.Snippet.Title</p>
+                    </li>
+                }
+            </ul>
+        }
+        @if (Model.channels.Count() > 0)
+        {
+            <p>Canais</p>
+            <ul class="spot-list">
+                @foreach (var item in Model.channels)
+                {
+                    <li>
+                        <button id="idVideo" style="display:none" value="@item.Id.ChannelId"></button>
+                        <img src="@item.Snippet.Thumbnails.High.Url" alt="" />
+                        <p>@item.Snippet.Title</p>
+                    </li>
+                }
+            </ul>
+        }
+        @if (Model.playlists.Count() > 0)
+        {
+            <p>Listas de Reprodução</p>
+            <ul class="spot-list">
+                @foreach (var item in Model.playlists)
+                {
+                    <li>
+                        <button id="idVideo" style="display:none" value="@item.Id.PlaylistId"></button>
+                        <img src="@item.Snippet.Thumbnails.High.Url" alt="" />
+                        <p>@item.Snippet.Title</p>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>
