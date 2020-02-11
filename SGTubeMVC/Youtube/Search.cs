@@ -17,7 +17,7 @@ namespace SGTubeMVC.Youtube
 
       var searchListRequest = youtubeService.Search.List("snippet");
       searchListRequest.Q = termo;
-      searchListRequest.MaxResults = 50;
+      searchListRequest.MaxResults = 15;
 
       return await searchListRequest.ExecuteAsync();
       }

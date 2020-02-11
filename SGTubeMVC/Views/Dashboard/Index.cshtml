@@ -52,10 +52,20 @@
             <ul class="spot-list">
                 @foreach (var item in Model.videos)
                 {
-                    <li onclick="">
+                    <li data-toggle="modal" data-target="#myModal">
                         <button id="idVideo" style="display:none" value="@item.Id.VideoId"></button>
                         <img src="@item.Snippet.Thumbnails.High.Url" alt="" />
                         <p>@item.Snippet.Title</p>
+
+                        <textarea class="modal-text" style="display: none">
+                            @item.Snippet.Title
+                            <br />
+                            Uploaded by: @item.Snippet.ChannelTitle
+                            <br />
+                            Date of Upload: @item.Snippet.PublishedAt
+                            <br />
+                            @item.Snippet.Description
+                        </textarea>
                     </li>
                 }
             </ul>
@@ -67,7 +77,7 @@
                 @foreach (var item in Model.channels)
                 {
                     <li>
-                        <button id="idVideo" style="display:none" value="@item.Id.ChannelId"></button>
+                        <button id="myBtn" style="display:none" value="@item.Id.ChannelId"></button>
                         <img src="@item.Snippet.Thumbnails.High.Url" alt="" />
                         <p>@item.Snippet.Title</p>
                     </li>
@@ -90,3 +100,34 @@
         }
     </div>
 </div>
+
+<div id="myModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Detalhes</h4>
+            <div id="popup" class="modal modal-text">
+                <p>Some text in the modal.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#myModal').on('show.bs.modal', function (event) {
+            var element = $(event.relatedTarget);
+            var dynamic_text = element.find('.modal-text').text();
+
+            var modal = $(this);
+            $("#popup").html(dynamic_text);
+        });
+
+    });
+</script>
+

@@ -10,6 +10,7 @@
 html, body, #root {
     min-height: 100%;
 }
+
 body {
     background: #000 url('../../assets/background.jpg');
     -webkit-font-smoothing: antialiased !important;
@@ -117,6 +118,7 @@ body, input, button {
     /**/
     height: auto;
 }
+
 .content_dashboard {
     margin-left: 25%;
     color: white;
@@ -141,19 +143,18 @@ body, input, button {
 }
 
     #historical td, #historical th {
-
     }
 
-    #historical td {        
+    #historical td {
     }
 
-        .historical-td-actionLink {
-            border: none;
-            width: 100%;
-            display: inline-block;
-            background: cadetblue;
-            color: #fff;
-        }
+.historical-td-actionLink {
+    border: none;
+    width: 100%;
+    display: inline-block;
+    background: cadetblue;
+    color: #fff;
+}
 
 a:link, a:visited {
     color: black;
@@ -169,12 +170,55 @@ a:hover, a:active {
 }
 
 #historical tr:nth-child(even) {
-    
 }
 
 #historical tr:hover {
 }
 
 #historical th {
-
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+.modal-text {
+    display: contents;
+}
+
+.modal-title {
+    font-size: 26px;
+    color: #444;
+    font-weight: bold;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
