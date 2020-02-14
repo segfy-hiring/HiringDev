@@ -1,0 +1,16 @@
+- name: search endpoint returns fails
+  endpoint:
+    method: get
+    path: /search
+  response:
+    status: 500
+  
+- name: hello endpoint returns success
+  endpoint:
+    method: get
+    path: /search
+  request:
+    queryStringParameters: 
+      q: 'Neural Network'
+  response:
+    status: 200
