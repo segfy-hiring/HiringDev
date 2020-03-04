@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 
-export function YoutubeList(props) {
+const YoutubeList = (props) => {
     return (
         props.items ?
         <ul>
@@ -9,3 +9,5 @@ export function YoutubeList(props) {
         : <div></div>
     );
 }
+
+export default YoutubeList;

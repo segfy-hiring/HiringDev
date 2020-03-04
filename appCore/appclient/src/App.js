@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react'
 import './App.css';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import YoutubeList from './components/YoutubeList';
+import Loading from './components/Partials/Loading';
 
-function App() {
-  //console.log(process.env.REACT_APP_URLBASE);
+const App = (props) => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [ytList, setYTList] = useState([])
+  
   return (
     <div className="container mt-5">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
@@ -24,7 +27,13 @@ function App() {
         </div>
         
         <div className="row">
-          <YoutubeList />
+          {isLoading &&
+            <Loading label="Aguarde....Carregando lista" icon={true} />
+          }
+
+          {!isLoading &&
+                    <YoutubeList items={ytList} />
+          }
         </div>
     </div>
   );
