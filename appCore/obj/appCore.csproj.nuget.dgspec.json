@@ -1,29 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projetos\\segfy\\HiringDev\\appCore\\appCore.csproj": {}
+    "D:\\Projetos\\segfy\\HiringDev\\appcore\\appcore.csproj": {}
   },
   "projects": {
-    "D:\\Projetos\\segfy\\HiringDev\\appCore\\appCore.csproj": {
+    "D:\\Projetos\\segfy\\HiringDev\\appcore\\appcore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projetos\\segfy\\HiringDev\\appCore\\appCore.csproj",
-        "projectName": "appCore",
-        "projectPath": "D:\\Projetos\\segfy\\HiringDev\\appCore\\appCore.csproj",
+        "projectUniqueName": "D:\\Projetos\\segfy\\HiringDev\\appcore\\appcore.csproj",
+        "projectName": "appcore",
+        "projectPath": "D:\\Projetos\\segfy\\HiringDev\\appcore\\appcore.csproj",
         "packagesPath": "C:\\Users\\hadou\\.nuget\\packages\\",
-        "outputPath": "D:\\Projetos\\segfy\\HiringDev\\appCore\\obj\\",
+        "outputPath": "D:\\Projetos\\segfy\\HiringDev\\appcore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hadou\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.0"
+          "netcoreapp3.1"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.0": {
+          "netcoreapp3.1": {
             "projectReferences": {}
           }
         },
@@ -34,7 +34,25 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.0": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.SpaServices": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.AspNetCore.SpaServices.Extensions": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.10.2, )"
+            },
+            "MongoDB.Driver.Core": {
+              "target": "Package",
+              "version": "[2.10.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -53,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
