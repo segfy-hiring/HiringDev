@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projetos\\segfy\\HiringDev\\appcore\\appcore.csproj": {}
+    "C:\\projects\\hirdev\\HiringDev\\appCore\\appCore.csproj": {}
   },
   "projects": {
-    "D:\\Projetos\\segfy\\HiringDev\\appcore\\appcore.csproj": {
+    "C:\\projects\\hirdev\\HiringDev\\appCore\\appCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projetos\\segfy\\HiringDev\\appcore\\appcore.csproj",
-        "projectName": "appcore",
-        "projectPath": "D:\\Projetos\\segfy\\HiringDev\\appcore\\appcore.csproj",
-        "packagesPath": "C:\\Users\\hadou\\.nuget\\packages\\",
-        "outputPath": "D:\\Projetos\\segfy\\HiringDev\\appcore\\obj\\",
+        "projectUniqueName": "C:\\projects\\hirdev\\HiringDev\\appCore\\appCore.csproj",
+        "projectName": "appCore",
+        "projectPath": "C:\\projects\\hirdev\\HiringDev\\appCore\\appCore.csproj",
+        "packagesPath": "C:\\Users\\Muffato\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\hirdev\\HiringDev\\appCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\hadou\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Muffato\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

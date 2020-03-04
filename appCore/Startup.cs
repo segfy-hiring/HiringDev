@@ -8,7 +8,11 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using appcore.Data;
+using appCore.Data;
+using appCore.Models;
+using appCore.Services;
+
+using Microsoft.Extensions.Options
 
 namespace appcore
 {
@@ -25,7 +29,14 @@ namespace appcore
         public void ConfigureServices(IServiceCollection services)
         {
  
-             services.AddTransient<DbContext>();
+            services.Configure<YoutubeDatabaseSettings>(
+            Configuration.GetSection(nameof(YoutubeDatabaseSettings)));
+
+            services.AddSingleton<IYoutubeDatabaseSettings>(sp =>
+            sp.GetRequiredService<IOptions<YoutubeDatabaseSettings>>().Value);
+            
+            services.AddSingleton<YoutubeService>();
+
             services.AddControllersWithViews();
  
             // In production, the React files will be served from this directory
