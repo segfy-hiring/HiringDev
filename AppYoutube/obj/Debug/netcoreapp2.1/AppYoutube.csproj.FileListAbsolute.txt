@@ -1,0 +1,14 @@
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\bin\Debug\netcoreapp2.1\AppYoutube.deps.json
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\bin\Debug\netcoreapp2.1\AppYoutube.runtimeconfig.json
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\bin\Debug\netcoreapp2.1\AppYoutube.runtimeconfig.dev.json
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\bin\Debug\netcoreapp2.1\AppYoutube.dll
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\obj\Debug\netcoreapp2.1\AppYoutube.csprojAssemblyReference.cache
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\obj\Debug\netcoreapp2.1\AppYoutube.csproj.CoreCompileInputs.cache
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\obj\Debug\netcoreapp2.1\AppYoutube.RazorAssemblyInfo.cache
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\obj\Debug\netcoreapp2.1\AppYoutube.RazorAssemblyInfo.cs
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\obj\Debug\netcoreapp2.1\AppYoutube.AssemblyInfoInputs.cache
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\obj\Debug\netcoreapp2.1\AppYoutube.AssemblyInfo.cs
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\obj\Debug\netcoreapp2.1\AppYoutube.RazorTargetAssemblyInfo.cache
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\bin\Debug\netcoreapp2.1\AppYoutube.pdb
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\obj\Debug\netcoreapp2.1\AppYoutube.dll
+C:\Users\wende\source\repos\AppYoutube\AppYoutube\obj\Debug\netcoreapp2.1\AppYoutube.pdb
