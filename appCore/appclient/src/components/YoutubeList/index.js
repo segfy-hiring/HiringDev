@@ -6,9 +6,10 @@ const YoutubeList = (props) => {
         props.items ?
         <ul>
             {props.items.map(item =>
-                <li key={item._id}>{item.title}</li>
+                <div className="col-md-3" key={item._id}>
+                <h2>{item.title}</h2>
+                </div>
             )}
-            
         </ul>
         : <div></div>
     );
