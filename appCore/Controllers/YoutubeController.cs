@@ -1,22 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using appCore.Models;
-using appCore.Services;
+using appcore.Models;
+using appcore.Services;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Cors;
 
-namespace appCore.Controllers 
+namespace appcore.Controllers 
     {
     
     [ApiController]
     [Route("[controller]")]
     public class YoutubeController : ControllerBase 
     {
+
         private readonly YoutubeService _ytService;
 
-         public YoutubeController(YoutubeService ytService)
+        public YoutubeController(YoutubeService ytService)
         {
             _ytService = ytService;
         }
 
+        [EnableCors("MyPolicy")]
         [HttpGet]
         public ActionResult<List<YoutubeModel>> Get() =>
             _ytService.Get();
@@ -39,7 +43,7 @@ namespace appCore.Controllers
         {
             _ytService.Create(yt);
 
-            return CreatedAtRoute("Getyt", new { id = yt.Id.ToString() }, yt);
+            return CreatedAtRoute("Getyt", new { id = yt._id.ToString() }, yt);
         }
 
         [HttpPut("{id:length(24)}")]
@@ -67,7 +71,7 @@ namespace appCore.Controllers
                 return NotFound();
             }
 
-            _ytService.Remove(yt.Id);
+            _ytService.Remove(yt._id);
 
             return NoContent();
         }

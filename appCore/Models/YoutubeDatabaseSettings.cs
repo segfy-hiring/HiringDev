@@ -1,4 +1,4 @@
-namespace appCore.Models
+namespace appcore.Models
 {
      public class YoutubeDatabaseSettings : IYoutubeDatabaseSettings
     {

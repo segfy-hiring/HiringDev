@@ -5,10 +5,31 @@ import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import YoutubeList from './components/YoutubeList';
 import Loading from './components/Partials/Loading';
+import axios from 'axios';
+
+
 
 const App = (props) => {
   const [isLoading, setIsLoading] = useState(false)
-  const [ytList, setYTList] = useState([])
+  const [YTList, setYTList] = useState([])
+  const [hasError, setErrors] =  useState(false)
+
+
+ 
+  
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch("/Youtube");
+      res.json()
+        .then(res => setYTList(res))
+        .catch(err => setErrors(err));
+    }
+
+    fetchData();
+    
+  },[]);
+  //console.log(YTList);
+
   
   return (
     <div className="container mt-5">
@@ -32,7 +53,7 @@ const App = (props) => {
           }
 
           {!isLoading &&
-                    <YoutubeList items={ytList} />
+                    <YoutubeList items={YTList} />
           }
         </div>
     </div>

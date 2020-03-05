@@ -1,5 +1,6 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System;
 
 namespace appcore.Models
 {
@@ -7,7 +8,7 @@ namespace appcore.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public ObjectId _id {get; set;}
+        public string _id {get; set;}
         
         public string Title {get; set;}
        
@@ -15,12 +16,14 @@ namespace appcore.Models
 
         public string Kind { get; set; }
 
+        [BsonRepresentation(BsonType.Document)]
         public DateTime PublishedAt { get; set; }
 
         public string ChannelTitle { get; set; }
 
         public string Thumbnail { get; set; }
 
-        public DateTime SearchedAT { get; private set; } = DateTime.Now;
+        [BsonRepresentation(BsonType.Document)]
+        public DateTime SearchedAT { get; private set; }
     }
 }

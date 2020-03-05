@@ -40,3 +40,4 @@ D:\Projetos\segfy\HiringDev\appcore\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
 D:\Projetos\segfy\HiringDev\appcore\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
 D:\Projetos\segfy\HiringDev\appcore\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
 D:\Projetos\segfy\HiringDev\appcore\bin\Debug\netcoreapp3.1\SharpCompress.dll
+D:\Projetos\segfy\HiringDev\appcore\bin\Debug\netcoreapp3.1\aws-windows-deployment-manifest.json

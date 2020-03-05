@@ -8,11 +8,9 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using appCore.Data;
-using appCore.Models;
-using appCore.Services;
-
-using Microsoft.Extensions.Options
+using appcore.Models;
+using appcore.Services;
+using Microsoft.Extensions.Options;
 
 namespace appcore
 {
@@ -44,6 +42,12 @@ namespace appcore
             {
                 configuration.RootPath = "appclient/build";
             });
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
         }
  
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,9 +67,8 @@ namespace appcore
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
- 
             app.UseRouting();
- 
+            app.UseCors("MyPolicy");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
