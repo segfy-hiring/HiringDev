@@ -5,7 +5,6 @@ import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import YoutubeList from './components/YoutubeList';
 import Loading from './components/Partials/Loading';
-import axios from 'axios';
 
 
 
@@ -13,49 +12,53 @@ const App = (props) => {
   const [isLoading, setIsLoading] = useState(false)
   const [YTList, setYTList] = useState([])
   const [hasError, setErrors] =  useState(false)
+  const [searchTerm, setSearchTerm] = useState("")
+  const [title, setTitle] = useState("")
 
-
- 
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    setIsLoading(true);
+    fetchData(searchTerm);
+    setTitle(searchTerm);
+}
+  async function fetchData(query) {
+    const res = await fetch("/Youtube/"+query);
+    res.json()
+      .then(res => setYTList(res),  setIsLoading(false))
+      .catch(err => setErrors(err));
+  }
   
-  useEffect(() => {
-    async function fetchData() {
-      const res = await fetch("/Youtube");
-      res.json()
-        .then(res => setYTList(res))
-        .catch(err => setErrors(err));
-    }
-
-    fetchData();
-    
-  },[]);
-  //console.log(YTList);
-
   
   return (
     <div className="container mt-5">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <div className="row">
+        <form className="w-100" onSubmit={handleSubmit}>
         <InputGroup className="mb-3">
           <FormControl
             placeholder="Search on Youtube"
             aria-label="Search on Youtube"
             aria-describedby="basic-addon2"
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
           />
           <InputGroup.Append>
-            <Button variant="outline-secondary">Go!</Button>
+            <Button type="submit" variant="outline-secondary">Go!</Button>
           </InputGroup.Append>
         </InputGroup>
+        </form>
         </div>
         
-        <div className="row">
+          {hasError &&
+            <p>See console for errors :(</p>
+          }
           {isLoading &&
-            <Loading label="Aguarde....Carregando lista" icon={true} />
+            <Loading label="Loading, please wait ;)" icon={true} />
           }
 
           {!isLoading &&
-                    <YoutubeList items={YTList} />
+                    <YoutubeList items={YTList.items} term={title} />
           }
-        </div>
+          
     </div>
   );
 }
