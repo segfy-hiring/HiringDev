@@ -10,7 +10,7 @@ namespace appcore.Controllers
     {
     
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class YoutubeController : ControllerBase 
     {
 

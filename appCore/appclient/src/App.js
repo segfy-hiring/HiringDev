@@ -11,7 +11,6 @@ import Loading from './components/Partials/Loading';
 const App = (props) => {
   const [isLoading, setIsLoading] = useState(false)
   const [YTList, setYTList] = useState([])
-  const [hasError, setErrors] =  useState(false)
   const [searchTerm, setSearchTerm] = useState("")
   const [title, setTitle] = useState("")
 
@@ -22,10 +21,10 @@ const App = (props) => {
     setTitle(searchTerm);
 }
   async function fetchData(query) {
-    const res = await fetch("/Youtube/"+query);
+    const res = await fetch("/api/Youtube/"+query);
     res.json()
       .then(res => setYTList(res),  setIsLoading(false))
-      .catch(err => setErrors(err));
+      .catch(err => console.log(err));
   }
   
   
@@ -48,9 +47,7 @@ const App = (props) => {
         </form>
         </div>
         
-          {hasError &&
-            <p>See console for errors :(</p>
-          }
+          
           {isLoading &&
             <Loading label="Loading, please wait ;)" icon={true} />
           }
@@ -58,7 +55,6 @@ const App = (props) => {
           {!isLoading &&
                     <YoutubeList items={YTList.items} term={title} />
           }
-          
     </div>
   );
 }
