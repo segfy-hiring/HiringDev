@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Google.Apis.Auth.OAuth2;
-using Google.Apis.Services;
-using Google.Apis.Upload;
-using Google.Apis.Util.Store;
+﻿using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
 using Google.Apis.YouTube.v3.Data;
+using System;
+using System.Collections.Generic;
 
 namespace AppYoutube.Models
 {
     public class Development
     {
-        public List<string> DadosYoutTube(string word)
+        /// <summary>
+        /// chamada do método principal, passando uma palavra e 
+        /// recebendo a lista de resultados
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns></returns>
+        public List<SearchResult> DadosYoutTube(string word)
         {
             try
             {
@@ -25,7 +26,7 @@ namespace AppYoutube.Models
                 {
                     Console.WriteLine("Error: " + e.Message);
                 }
-                return new List<string>();
+                return new List<SearchResult>();
             }
         }
 
@@ -36,50 +37,20 @@ namespace AppYoutube.Models
         /// </summary>
         /// <param name="word"></param>
         /// <returns></returns>
-        public List<string> Run(string word)
+        public List<SearchResult> Run(string word)
         {
-            var youtubeService = new YouTubeService(new BaseClientService.Initializer()
+            var lista = new List<SearchResult>();
+            var serviceYoutube = new YouTubeService(new BaseClientService.Initializer()
             {
-                ApiKey = "AIzaSyDoKfEuXhDFElw3qL3INlvA7KKfOwp9h6A",
+                ApiKey = "",
                 ApplicationName = this.GetType().ToString()
             });
-
-            var searchListRequest = youtubeService.Search.List("snippet");
-            searchListRequest.Q = word; // Replace with your search term.
-            searchListRequest.MaxResults = 50;
-
-            // Call the search.list method to retrieve results matching the specified query term.
-            //var searchListResponse = await searchListRequest.ExecuteAsync();
+            var searchListRequest = serviceYoutube.Search.List("snippet");
+            searchListRequest.Q = word;
+            searchListRequest.MaxResults = 20;
             var searchListResponse = searchListRequest.Execute();
-
-            List<string> videos = new List<string>();
-            List<string> channels = new List<string>();
-            List<string> playlists = new List<string>();
-
-            // Add each result to the appropriate list, and then display the lists of
-            // matching videos, channels, and playlists.
-            foreach (var searchResult in searchListResponse.Items)
-            {
-                switch (searchResult.Id.Kind)
-                {
-                    case "youtube#video":
-                        videos.Add(String.Format("{0} ({1})", searchResult.Snippet.Title, searchResult.Id.VideoId));
-                        break;
-
-                    case "youtube#channel":
-                        channels.Add(String.Format("{0} ({1})", searchResult.Snippet.Title, searchResult.Id.ChannelId));
-                        break;
-
-                    case "youtube#playlist":
-                        playlists.Add(String.Format("{0} ({1})", searchResult.Snippet.Title, searchResult.Id.PlaylistId));
-                        break;
-                }
-            }
-
-            //Console.WriteLine(String.Format("Videos:\n{0}\n", string.Join("\n", videos)));
-            //Console.WriteLine(String.Format("Channels:\n{0}\n", string.Join("\n", channels)));
-            //Console.WriteLine(String.Format("Playlists:\n{0}\n", string.Join("\n", playlists)));
-            return channels;
+            foreach (var searchResult in searchListResponse.Items) { switch (searchResult.Id.Kind) { case "youtube#video": lista.Add(searchResult); break; } }
+            return lista;
         }
     }
 }

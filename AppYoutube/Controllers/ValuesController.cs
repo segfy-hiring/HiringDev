@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AppYoutube.Models;
+using Google.Apis.YouTube.v3.Data;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace AppYoutube.Controllers
 {
@@ -11,37 +13,41 @@ namespace AppYoutube.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly DataService _dataService;
+
+        public ValuesController(DataService dataService)
+        {
+            _dataService = dataService;
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get(string word)
+        public ActionResult<IEnumerable<SearchResult>> Get(string word)
         {
             var retorno = new Development();
-            return retorno.DadosYoutTube(word);
+            var lista = retorno.DadosYoutTube(word);
+            var novaLista = new List<SearchResult>();
+            foreach (var item in lista)
+            {
+                var novoObjeto = new Dados { Description = item.Snippet.Description, Name = item.Snippet.ChannelTitle, URL = item.Snippet.ChannelId };
+                _dataService.Create(novoObjeto);
+                novaLista.Add(item);
+            }
+            //return retorno.DadosYoutTube(word);
+            return novaLista;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<Dados> Create(Dados dados)
         {
+            _dataService.Create(dados);
+
+            return CreatedAtRoute("Get", new { id = dados.Id.ToString() }, dados);
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        [Route("searchdata")]
+        [HttpGet]
+        public ActionResult<List<Dados>> SearchData() =>
+            _dataService.Get();
     }
 }
