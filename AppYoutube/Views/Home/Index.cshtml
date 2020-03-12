@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<div class="container">
+    <div class="form-inline">
+        <div class="form-group">
+            <label>Search YouTube</label>
+            <input type="text" placeholder="Search..." class="form-control" id="dataSearch" />
+            <button class="btn btn-sm btn-success" id="btnSearch">Search</button>
+        </div>
+    </div>
+    <div class="form-group" id="result"></div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $("#btnSearch").click(function () {
+            $.ajax({
+                url: "/api/values", data: { word: $("#dataSearch").val() }, success: function (result) {
+                    var start = "<table><tr><td></td><td>Chanell</td><td>Description</td></tr>";
+                    var meio = "";
+                    for (var x = 0; x < result.length; x++) {
+                        meio = meio + "<tr><td> <a href='https://www.youtube.com/watch?v=" + result[x].id.videoId + "' target='_blank'><img src='" + result[x].snippet.thumbnails.default.url + "' /> </a> </td><td>" + result[x].snippet.channelTitle + "</td><td>" + result[x].snippet.description + "</td></tr>";
+                    }
+                    var final = "</table>";
+                    $("#result").html(start + meio + final);
+                }
+            });
+        });
+
+    });
+</script>
+
