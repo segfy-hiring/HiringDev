@@ -1,0 +1,156 @@
+﻿@using  YoutubeApi.Api.Extensions;
+@using YoutubeAPI.Business.Util;
+@using Microsoft.AspNetCore.Http;
+
+@model PaginationViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@if (this.Model.Searches.Any())
+{
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">
+                        <div class="au-card-title" style="background-image:url('/images/bg-title-01.jpg');">
+                            <div class="bg-overlay bg-overlay--blue"></div>
+                            <h3>
+                                @if (string.IsNullOrEmpty(this.Model.Search))
+                                {
+                                    <i class="zmdi zmdi-filter-list"></i><label>Vídeos populares</label>
+                                }
+                                else
+                                {
+                                    <i class="zmdi zmdi-filter-list"></i><label> Resultados para: @this.Model.Search </label>
+                                }
+                            </h3>
+                        </div>
+                        <div class="au-task js-list-load">
+
+                            @foreach (var item in this.Model.Searches.Where(x => !x.IsFavorite))
+                            {
+                                <div class="au-message__item unread">
+                                    <div class="au-message__item-inner">
+                                        <div class="au-message__item-text">
+                                            <div class="avatar-wrap online">
+
+                                                <iframe width="350" height="245" style="border: 0px;"
+                                                        src="https://www.youtube.com/embed/@item.Id">
+                                                </iframe>
+                                            </div>
+                                            <div class="text">
+                                                <h1 class="name">@item.Title</h1>
+                                                <p>@item.Description</p>
+                                            </div>
+                                            @if (Context.Session.GetString(Constants.USER) == null)
+                                            {
+                                                <div class="form-header">
+                                                    <div class="form-group">
+                                                        <button type="submit" disabled class="btn btn-primary">
+                                                            <i class="zmdi zmdi-favorite"></i> Favoritar
+                                                        </button>
+
+
+                                                    </div>
+                                                </div>
+
+                                            }
+                                            else
+                                            {
+                                                <form asp-action="Favorite" asp-controller="Home" class="form-header" method="post">
+                                                    <input class="form-control" value="@ViewBag.Search" type="hidden" name="search" />
+                                                    <div class="form-group">
+                                                        <input class="form-control" asp-for="@item.Id" value="@item.Id" type="hidden" name="id" />
+                                                        <input class="form-control" asp-for="@item.Title" value="@item.Title" type="hidden" name="Title" />
+                                                        <input class="form-control" asp-for="@item.Type" value="@item.Type" type="hidden" name="Type" />
+                                                        <input class="form-control" asp-for="@item.Description" value="@item.Description" type="hidden" name="Description" />
+                                                        <input class="form-control" asp-for="@item.PublishedAt" value="@item.PublishedAt" type="hidden" name="PublishedAt" />
+                                                        <input class="form-control" asp-for="@Model.NextPage" value="@Model.NextPage" type="hidden" name="NextPage" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-primary">
+                                                            <i class="zmdi zmdi-favorite"></i> Favoritar
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            }
+
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                            <div class="au-task__footer">
+                                <form asp-action="ShowMore" asp-controller="Home" class="form-header" method="get">
+                                    <input class="au-input au-input--xl" value="@Model.Search" type="hidden" name="search" />
+                                    <input class="au-input au-input--xl" value="@Model.NextPage" type="hidden" name="nextPageToken" />
+                                    <button class="au-btn au-btn--submit" type="submit">Carregar mais...</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">
+                        <div class="au-card-title" style="background-image:url('images/bg-title-01.jpg');">
+                            <div class="bg-overlay bg-overlay--yellow"></div>
+                            <h3>
+                                @if (Context.Session.GetString(Constants.USER) == null)
+                                {
+                                    <i class="zmdi zmdi-favorite"></i><label>Favoritados </label> <label style="font-size:15px;"> (faça login para conseguir favoritar)</label>
+
+                                }
+                                else if (string.IsNullOrEmpty(this.Model.Search))
+                                {
+                                    <i class="zmdi zmdi-favorite"></i><label>Favoritados </label>
+                                }
+                                else
+                                {
+                                    <i class="zmdi zmdi-favorite"></i><label>Favoritados para: @this.Model.Search </label>
+                                }
+                            </h3>
+                        </div>
+                        <div class="au-task js-list-load">
+
+                            @foreach (var item in this.Model.Searches.DistinctBy(p => p.Id).Where(x => x.IsFavorite))
+                            {
+                                <div class="au-message__item unread">
+                                    <div class="au-message__item-inner">
+                                        <div class="au-message__item-text">
+                                            <div class="avatar-wrap online">
+
+                                                <iframe width="350" height="245" style="border: 0px;"
+                                                        src="https://www.youtube.com/embed/@item.Id">
+                                                </iframe>
+                                            </div>
+                                            <div class="text">
+                                                <h1 class="name">@item.Title</h1>
+                                                <p> @item.Description</p>
+                                            </div>
+                                            <form asp-action="RemoveFavorite" asp-controller="Home" class="form-header" method="post">
+                                                <div class="form-group">
+                                                    <input class="form-control" asp-for="@item.Id" value="@item.Id" type="hidden" name="id" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-danger">
+                                                        <i class="zmdi zmdi-delete"></i> Remove Favorito
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
