@@ -32,7 +32,7 @@ namespace SearchApi.Controllers
 
             YouTubeService youtube = new YouTubeService(new BaseClientService.Initializer()
             {
-                ApiKey = "AIzaSyD-Z8WxRoOUhoaP-eCaguSSy9EACNwCq6Y"
+                ApiKey = "replace_value"
             });
 
             SearchResource.ListRequest listRequest = youtube.Search.List("snippet");
