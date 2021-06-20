@@ -1,0 +1,52 @@
+@model ChannelViewModel
+
+@{
+    ViewData["Title"] = "Details - Channel";
+}
+
+<h3>Channel Details</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <b>ID</b>
+    </div>
+    <div class="col">
+        @Model.Id
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col">
+          <b>Title</b>
+      </div>
+      <div class="col">
+          @Model.Title
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col">
+          <b>Description</b>
+      </div>
+      <div class="col">
+          @Model.Description
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+          <b>Publishing Date</b>
+      </div>
+      <div class="col">
+          @Model.PublishedAt
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+          <b>Channel On Youtube</b>
+      </div>
+      <div class="col">
+          <a href='@string.Concat("https://www.youtube.com/channel/", Model.ChannelId)' target="_blank">Go to Channel</a>
+      </div>
+  </div>
+</div>
