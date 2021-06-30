@@ -1,0 +1,36 @@
+﻿@model YoutubeVideoViewModel
+
+<div class="text-center">
+    <h1>Details of "@Model.Title"</h1>
+    <img src="@Model.ThumbnailUrlVideoImage" />
+</div>
+<form>
+    <div class="form-group">
+        <label>Id</label>
+        <input type="text" class="form-control" disabled value="@Model.Id">
+    </div>
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" disabled value="@Model.Title">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Description</label>
+        <textarea type="text" class="form-control" disabled rows="2">@Model.Description</textarea>
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Channel Title</label>
+        <input type="text" class="form-control" disabled value="@Model.ChannelTitle">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Published At</label>
+        <input type="text" class="form-control" disabled value="@Model.PublishedAtRaw">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Live Broadcast Content</label>
+        <input type="text" class="form-control" disabled value="@Model.LiveBroadcastContent">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">E Tag</label>
+        <input type="text" class="form-control" disabled value="@Model.ETag">
+    </div>   
+</form>
