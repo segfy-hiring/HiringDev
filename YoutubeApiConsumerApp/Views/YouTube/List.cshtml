@@ -1,0 +1,107 @@
+﻿@model SearchResponseModel
+
+<div class="text-center">
+    @if (Model._youtubeVideos.Count.Equals(0) && Model._youtubeChannels.Count.Equals(0))
+    {
+        <h1 class="display-4">No Videos or Channels Found, please try another Search Term!</h1>
+    }
+    else
+    {        
+        <div class="row">
+            <div style="background-color: azure;" class="table-responsive col-md-6">
+                <h1 class="display-4">Videos!</h1>
+                <p>(Ordered by Relevance - Displaying TOP 30)</p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Title</th>
+                        </tr>
+                    </thead>
+                    @foreach (var s in Model._youtubeVideos)
+                    {
+                        <tbody>
+                            <tr>
+                                <td>@s.Title</td>
+                                <td>
+                                    <form asp-controller="Youtube" asp-action="VideoDetails" method="post">
+                                        <input type="hidden" name="Id" value="@s.Id" />
+                                        <input type="hidden" name="Title" value="@s.Title" />
+                                        <input type="hidden" name="Description" value="@s.Description" />
+                                        <input type="hidden" name="ChannelId" value="@s.ChannelId" />
+                                        <input type="hidden" name="ChannelTitle" value="@s.ChannelTitle" />
+                                        <input type="hidden" name="PublishedAtRaw" value="@s.PublishedAtRaw" />
+                                        <input type="hidden" name="LiveBroadcastContent" value="@s.LiveBroadcastContent" />
+                                        <input type="hidden" name="ETag" value="@s.ETag" />
+                                        <input type="hidden" name="ThumbnailUrlVideoImage" value="@s.ThumbnailUrlVideoImage" />
+                                        <button type="submit" class="btn btn-info">Details</button>
+                                    </form>                                    
+                                </td>
+                                <td>
+                                    <form asp-controller="Youtube" asp-action="SaveVideoOnDatabase" method="post">
+                                        <input type="hidden" name="Id" value="@s.Id" />
+                                        <input type="hidden" name="Title" value="@s.Title" />
+                                        <input type="hidden" name="Description" value="@s.Description" />
+                                        <input type="hidden" name="ChannelId" value="@s.ChannelId" />
+                                        <input type="hidden" name="ChannelTitle" value="@s.ChannelTitle" />
+                                        <input type="hidden" name="PublishedAtRaw" value="@s.PublishedAtRaw" />
+                                        <input type="hidden" name="LiveBroadcastContent" value="@s.LiveBroadcastContent" />
+                                        <input type="hidden" name="ETag" value="@s.ETag" />
+                                        <input type="hidden" name="ThumbnailUrlVideoImage" value="@s.ThumbnailUrlVideoImage" />
+                                        <button type="submit" class="btn btn-success">Save</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            </div>
+            <div style="background-color: aliceblue;" class="table-responsive col-md-6">
+                <h1 class="display-4">Channels!</h1>
+                <p>(Ordered by Relevance - Displaying TOP 30)</p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Title</th>
+                        </tr>
+                    </thead>
+                    @foreach (var s in Model._youtubeChannels)
+                    {
+                        <tbody>
+                            <tr>
+                                <td>@s.Title</td>
+                                <td>
+                                    <form asp-controller="Youtube" asp-action="ChannelDetails" method="post">
+                                        <input type="hidden" name="Id" value="@s.Id" />
+                                        <input type="hidden" name="Title" value="@s.Title" />
+                                        <input type="hidden" name="Description" value="@s.Description" />
+                                        <input type="hidden" name="ChannelId" value="@s.ChannelId" />
+                                        <input type="hidden" name="ChannelTitle" value="@s.ChannelTitle" />
+                                        <input type="hidden" name="PublishedAtRaw" value="@s.PublishedAtRaw" />
+                                        <input type="hidden" name="LiveBroadcastContent" value="@s.LiveBroadcastContent" />
+                                        <input type="hidden" name="ETag" value="@s.ETag" />
+                                        <input type="hidden" name="ThumbnailUrlVideoImage" value="@s.ThumbnailUrlVideoImage" />
+                                        <button type="submit" class="btn btn-info">Details</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form asp-controller="Youtube" asp-action="SaveChannelOnDatabase" method="post">
+                                        <input type="hidden" name="Id" value="@s.Id" />
+                                        <input type="hidden" name="Title" value="@s.Title" />
+                                        <input type="hidden" name="Description" value="@s.Description" />
+                                        <input type="hidden" name="ChannelId" value="@s.ChannelId" />
+                                        <input type="hidden" name="ChannelTitle" value="@s.ChannelTitle" />
+                                        <input type="hidden" name="PublishedAtRaw" value="@s.PublishedAtRaw" />
+                                        <input type="hidden" name="LiveBroadcastContent" value="@s.LiveBroadcastContent" />
+                                        <input type="hidden" name="ETag" value="@s.ETag" />
+                                        <input type="hidden" name="ThumbnailUrlVideoImage" value="@s.ThumbnailUrlVideoImage" />
+                                        <button type="submit" class="btn btn-success">Save</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            </div>            
+        </div>        
+    }
+</div>

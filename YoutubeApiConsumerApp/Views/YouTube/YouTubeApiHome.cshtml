@@ -1,0 +1,21 @@
+﻿
+@model SearchModel
+
+<div class="text-center">
+    <h1 class="display-4">Welcome!</h1>
+    <p>Hey, this is a simple App made with .NET 5 that consumes the YouTube Data API <br/> for searching Videos and Channels, Hope you enjoy it! c:</p>
+
+    <div class="container">
+        <button type="button" class="btn btn-secondary" onclick="location.href='@Url.Action("GetVideosAndChannelsFromDatabase","Youtube")'">List All Saved Videos and Channels</button>
+        <br />
+    </div>
+    <hr />
+    <div class="container">
+        <form asp-controller="Youtube" asp-action="Search" method="get">
+            <h2>Search: </h2>
+            <input class="form-control" asp-for="KeyWord" type="text" name="keyWord" placeholder="ASP.NET Beginner Tutorial" />
+            <br/>
+            <button class="btn btn-primary" type="submit">Click for Searching</button>
+        </form>
+    </div>    
+</div>
