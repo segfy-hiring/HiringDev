@@ -62,19 +62,6 @@
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
-      },
-      "Joao.HiringDev.Servicos.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/Joao.HiringDev.Servicos.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Joao.HiringDev.Servicos.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
       }
     }
   },
@@ -211,17 +198,11 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
-    },
-    "Joao.HiringDev.Servicos.Core/1.0.0": {
-      "type": "project",
-      "path": "../Joao.HiringDev.Servicos.Core/Joao.HiringDev.Servicos.Core.csproj",
-      "msbuildProject": "../Joao.HiringDev.Servicos.Core/Joao.HiringDev.Servicos.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Google.Apis.YouTube.v3 >= 1.52.0.2378",
-      "Joao.HiringDev.Servicos.Core >= 1.0.0"
+      "Google.Apis.YouTube.v3 >= 1.52.0.2378"
     ]
   },
   "packageFolders": {
@@ -251,11 +232,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {
-            "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Servicos.Core\\Joao.HiringDev.Servicos.Core.csproj": {
-              "projectPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Servicos.Core\\Joao.HiringDev.Servicos.Core.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

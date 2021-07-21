@@ -1,10 +1,8 @@
 ﻿using Joao.HiringDev.Apresentacao.Models;
+using Joao.HiringDev.Servicos.Servicos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Joao.HiringDev.Apresentacao.Controllers
@@ -18,8 +16,10 @@ namespace Joao.HiringDev.Apresentacao.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var youTubeApiServico = new YoutubeApiServico();
+            await youTubeApiServico.Obter();
             return View();
         }
 

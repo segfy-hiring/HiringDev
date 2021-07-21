@@ -1,5 +1,3 @@
-using System;
-
 namespace Joao.HiringDev.Apresentacao.Models
 {
     public class ErrorViewModel

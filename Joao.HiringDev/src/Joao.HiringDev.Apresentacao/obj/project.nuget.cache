@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "5QrWEHhRmQgsSu/K+RU85cjxKV5u4NYl7ScKns0vHgY/JkUabj2P3juN4/ufzTXYMrdgH8Bws5gwaqLK7d6ygA==",
+  "dgSpecHash": "zHbi2W/DJ3pc2yHsreXodoX37jExI+e2c7NY4UB5KG89FL34LHEpPdJMQk/T47Rub5EWuQUJABhm8ndfUpn3iQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Apresentacao\\Joao.HiringDev.Apresentacao.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\João\\.nuget\\packages\\google.apis\\1.52.0\\google.apis.1.52.0.nupkg.sha512",
+    "C:\\Users\\João\\.nuget\\packages\\google.apis.auth\\1.52.0\\google.apis.auth.1.52.0.nupkg.sha512",
+    "C:\\Users\\João\\.nuget\\packages\\google.apis.core\\1.52.0\\google.apis.core.1.52.0.nupkg.sha512",
+    "C:\\Users\\João\\.nuget\\packages\\google.apis.youtube.v3\\1.52.0.2378\\google.apis.youtube.v3.1.52.0.2378.nupkg.sha512",
+    "C:\\Users\\João\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

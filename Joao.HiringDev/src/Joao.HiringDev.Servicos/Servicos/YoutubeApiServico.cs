@@ -1,26 +1,44 @@
-﻿using Google.Apis.Samples.Helper;
-using Google.Apis.Services;
+﻿using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
-using Google.Apis.YouTube.v3.Data;
-
-using Joao.HiringDev.Servicos.Core.IServicos;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Joao.HiringDev.Servicos.Servicos
 {
-    public class YoutubeApiServico : IYoutubeApiServico
+    public class YoutubeApiServico
     {
-        public void Pesquisar()
+        public async Task Obter()
         {
-            YoutubeService youtube = new YouTubeService(new BaseClientService.Initializer()
+
+            var youTubeService = new YouTubeService(new BaseClientService.Initializer()
             {
-                ApiKey = ""
+                ApiKey = "AIzaSyDJZG8ti1wfsoORJeBPHSbRKOFM1Q2nw-U",
+                ApplicationName = this.GetType().ToString()
             });
 
-            SearchResource.ListRequest listRequest = youtube.Search.List("snippet");
-            listRequest.Q = CommandLine.RequestUserInput<string>("Search term: ");
-            listRequest.Order = SearchResource.Order.Relevance;
+            SearchResource.ListRequest listRequest = youTubeService.Search.List("snippet");
+            listRequest.Q = "joão carias";
+            listRequest.MaxResults = 50;
 
-            SearchListResponse searchResponse = listRequest.Fetch();
+            var listResponse = await listRequest.ExecuteAsync();
+            List<string> videos = new List<string>();
+            List<string> canais = new List<string>();
+
+            foreach (var item in listResponse.Items)
+            {
+                switch (item.Id.Kind)
+                {
+                    case "youtube#video":
+                        videos.Add(String.Format("{0} ({1})", item.Snippet.Title, item.Id.VideoId));
+                        break;
+
+                    case "youtube#channel":
+                        canais.Add(String.Format("{0} ({1})", item.Snippet.Title, item.Id.ChannelId));
+                        break;
+                }
+            }
         }
     }
 }
