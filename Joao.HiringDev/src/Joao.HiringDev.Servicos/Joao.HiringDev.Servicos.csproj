@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Apis.YouTube.v3" Version="1.52.0.2378" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Joao.HiringDev.Servicos.Core\Joao.HiringDev.Servicos.Core.csproj" />
   </ItemGroup>
 
