@@ -32,6 +32,7 @@
       "Joao.HiringDev.Servicos/1.0.0": {
         "dependencies": {
           "Google.Apis.YouTube.v3": "1.52.0.2378",
+          "Joao.HiringDev.Servicos.Core": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -394,6 +395,14 @@
         },
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Joao.HiringDev.Servicos.Core/1.0.0": {
+        "runtime": {
+          "Joao.HiringDev.Servicos.Core.dll": {}
+        },
+        "compile": {
+          "Joao.HiringDev.Servicos.Core.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -2130,6 +2139,11 @@
       "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "Joao.HiringDev.Servicos.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
       "type": "referenceassembly",

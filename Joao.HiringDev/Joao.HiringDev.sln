@@ -5,9 +5,13 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Joao.HiringDev.Apresentacao", "src\Joao.HiringDev.Apresentacao\Joao.HiringDev.Apresentacao.csproj", "{14DC262D-96DC-4A94-ADCC-9C421D28066A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joao.HiringDev.Servicos.Core", "src\Joao.HiringDev.Servicos.Core\Joao.HiringDev.Servicos.Core.csproj", "{69C1CECF-F9C7-47C6-A47F-4090A80C9680}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Joao.HiringDev.Servicos.Core", "src\Joao.HiringDev.Servicos.Core\Joao.HiringDev.Servicos.Core.csproj", "{69C1CECF-F9C7-47C6-A47F-4090A80C9680}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joao.HiringDev.Servicos", "src\Joao.HiringDev.Servicos\Joao.HiringDev.Servicos.csproj", "{788A5ECC-2E9F-4B81-83E2-6CFCF2CFA32D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Joao.HiringDev.Servicos", "src\Joao.HiringDev.Servicos\Joao.HiringDev.Servicos.csproj", "{788A5ECC-2E9F-4B81-83E2-6CFCF2CFA32D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joao.HiringDev.Dominio.Core", "src\Joao.HiringDev.Dominio.Core\Joao.HiringDev.Dominio.Core.csproj", "{9F42FA7F-C70F-4545-B510-031EE668CCD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joao.HiringDev.Dominio", "src\Joao.HiringDev.Dominio\Joao.HiringDev.Dominio.csproj", "{35D1D6FB-4C6D-4359-ACF6-41FB8F445584}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{788A5ECC-2E9F-4B81-83E2-6CFCF2CFA32D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{788A5ECC-2E9F-4B81-83E2-6CFCF2CFA32D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{788A5ECC-2E9F-4B81-83E2-6CFCF2CFA32D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F42FA7F-C70F-4545-B510-031EE668CCD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F42FA7F-C70F-4545-B510-031EE668CCD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F42FA7F-C70F-4545-B510-031EE668CCD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F42FA7F-C70F-4545-B510-031EE668CCD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35D1D6FB-4C6D-4359-ACF6-41FB8F445584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35D1D6FB-4C6D-4359-ACF6-41FB8F445584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35D1D6FB-4C6D-4359-ACF6-41FB8F445584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35D1D6FB-4C6D-4359-ACF6-41FB8F445584}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

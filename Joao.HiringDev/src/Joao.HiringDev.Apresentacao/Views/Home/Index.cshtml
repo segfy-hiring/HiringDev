@@ -1,8 +1,25 @@
-﻿@{
+﻿@model Joao.HiringDev.Apresentacao.Models.Home.FiltroHomeViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Buscador de vídeos e canais do Youtube desenvolvido com ASP.NET Core.</p>
+
+    <hr />
+
 </div>
+
+<form asp-action="Index" asp-controller="Home" method="get" class="row">
+    <div class="col col-9">
+        @Html.LabelFor(m => m.PalavraChave, htmlAttributes: new { @class = "form-label" })
+        @Html.EditorFor(m => m.PalavraChave, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(m => m.PalavraChave, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col col-3">
+        <button type="submit" class="btn btn-dark col-12 btn-block mb-3"><i class="fas fa-search"></i> Pesquisar... </button>
+    </div>
+</form>

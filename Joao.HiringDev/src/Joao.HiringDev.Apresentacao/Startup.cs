@@ -1,3 +1,5 @@
+using Joao.HiringDev.Servicos.Core.IServicos;
+using Joao.HiringDev.Servicos.Servicos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,7 +20,11 @@ namespace Joao.HiringDev.Apresentacao
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddRazorRuntimeCompilation();
+
+            services.AddScoped<IYoutubeApiServico, YoutubeApiServico>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

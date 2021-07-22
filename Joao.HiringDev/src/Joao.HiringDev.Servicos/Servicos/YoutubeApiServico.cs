@@ -1,5 +1,7 @@
 ﻿using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
+using Joao.HiringDev.Dominio.Entidades;
+using Joao.HiringDev.Servicos.Core.IServicos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Joao.HiringDev.Servicos.Servicos
 {
-    public class YoutubeApiServico
+    public class YoutubeApiServico : IYoutubeApiServico
     {
-        public async Task Obter()
+        public async Task Obter(string busca)
         {
 
             var youTubeService = new YouTubeService(new BaseClientService.Initializer()
@@ -19,23 +21,24 @@ namespace Joao.HiringDev.Servicos.Servicos
             });
 
             SearchResource.ListRequest listRequest = youTubeService.Search.List("snippet");
-            listRequest.Q = "joão carias";
+            listRequest.Q = busca;
             listRequest.MaxResults = 50;
 
             var listResponse = await listRequest.ExecuteAsync();
-            List<string> videos = new List<string>();
-            List<string> canais = new List<string>();
+            List<VideoYoutube> videos = new List<VideoYoutube>();
+            List<CanalYoutube> canais = new List<CanalYoutube>();
 
             foreach (var item in listResponse.Items)
             {
                 switch (item.Id.Kind)
                 {
                     case "youtube#video":
-                        videos.Add(String.Format("{0} ({1})", item.Snippet.Title, item.Id.VideoId));
+                        
+                        videos.Add(new VideoYoutube(item.Id.VideoId, item.Snippet.Title));
                         break;
 
                     case "youtube#channel":
-                        canais.Add(String.Format("{0} ({1})", item.Snippet.Title, item.Id.ChannelId));
+                        canais.Add(new CanalYoutube(item.Id.ChannelId, item.Snippet.Title));
                         break;
                 }
             }

@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.RazorPages" Version="2.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Joao.HiringDev.Servicos.Core\Joao.HiringDev.Servicos.Core.csproj" />
     <ProjectReference Include="..\Joao.HiringDev.Servicos\Joao.HiringDev.Servicos.csproj" />
   </ItemGroup>
 

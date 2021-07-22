@@ -1,4 +1,6 @@
 ﻿using Joao.HiringDev.Apresentacao.Models;
+using Joao.HiringDev.Apresentacao.Models.Home;
+using Joao.HiringDev.Servicos.Core.IServicos;
 using Joao.HiringDev.Servicos.Servicos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -10,17 +12,29 @@ namespace Joao.HiringDev.Apresentacao.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IYoutubeApiServico _youtubeApiServico;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(
+                        ILogger<HomeController> logger,
+                        IYoutubeApiServico youtubeApiServico)
         {
             _logger = logger;
+            _youtubeApiServico = youtubeApiServico;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(FiltroHomeViewModel viewModel)
         {
-            var youTubeApiServico = new YoutubeApiServico();
-            await youTubeApiServico.Obter();
-            return View();
+            if(viewModel != null)
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View(viewModel);
+                }
+                
+                await _youtubeApiServico.Obter(viewModel.PalavraChave);
+            }
+
+            return View(viewModel);
         }
 
         public IActionResult Privacy()

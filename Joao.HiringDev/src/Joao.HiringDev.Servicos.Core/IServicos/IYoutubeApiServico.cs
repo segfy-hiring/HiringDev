@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace Joao.HiringDev.Servicos.Core.IServicos
 {
-    interface IYoutubeApiServico
+    public interface IYoutubeApiServico
     {
+        Task Obter(string busca);
     }
 }
