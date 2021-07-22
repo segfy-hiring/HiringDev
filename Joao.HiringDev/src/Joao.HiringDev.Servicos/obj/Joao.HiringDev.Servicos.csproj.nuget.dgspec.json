@@ -148,7 +148,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio\\Joao.HiringDev.Dominio.csproj": {
+                "projectPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio\\Joao.HiringDev.Dominio.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

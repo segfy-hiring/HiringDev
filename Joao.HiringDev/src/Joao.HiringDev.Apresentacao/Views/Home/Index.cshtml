@@ -23,3 +23,42 @@
         <button type="submit" class="btn btn-dark col-12 btn-block mb-3"><i class="fas fa-search"></i> Pesquisar... </button>
     </div>
 </form>
+
+@if (Model.YoutubeApiServico.Videos != null && Model.YoutubeApiServico.Videos.Any() && Model.YoutubeApiServico.Canais != null && Model.YoutubeApiServico.Canais.Any())
+{
+
+    <div class="card">
+        <div class="card-body">
+            @if (Model.YoutubeApiServico.Videos != null && Model.YoutubeApiServico.Videos.Any())
+            {
+
+            }
+            else
+            {
+
+            }
+            This is some text within a card body.
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            @if (Model.YoutubeApiServico.Canais != null && Model.YoutubeApiServico.Canais.Any())
+            {
+
+            }
+            else
+            {
+
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-body">
+            This is some text within a card body.
+        </div>
+    </div>
+}

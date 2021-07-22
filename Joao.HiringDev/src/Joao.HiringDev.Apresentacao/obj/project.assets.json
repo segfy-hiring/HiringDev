@@ -2277,6 +2277,9 @@
       "Joao.HiringDev.Servicos.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Joao.HiringDev.Dominio": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Joao.HiringDev.Servicos.Core.dll": {}
         },

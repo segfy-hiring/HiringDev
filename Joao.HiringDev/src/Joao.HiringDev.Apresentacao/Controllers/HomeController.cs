@@ -1,5 +1,6 @@
 ﻿using Joao.HiringDev.Apresentacao.Models;
 using Joao.HiringDev.Apresentacao.Models.Home;
+using Joao.HiringDev.Dominio.Responses;
 using Joao.HiringDev.Servicos.Core.IServicos;
 using Joao.HiringDev.Servicos.Servicos;
 using Microsoft.AspNetCore.Mvc;
@@ -31,7 +32,7 @@ namespace Joao.HiringDev.Apresentacao.Controllers
                     return View(viewModel);
                 }
                 
-                await _youtubeApiServico.Obter(viewModel.PalavraChave);
+                YoutubeApiServicoResponse youtubeApiServico = await _youtubeApiServico.Obter(viewModel.PalavraChave);
             }
 
             return View(viewModel);

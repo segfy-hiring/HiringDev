@@ -1,11 +1,54 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Joao.HiringDev.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Joao.HiringDev.Dominio.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Joao.HiringDev.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Joao.HiringDev.Dominio.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Joao.HiringDev.Dominio.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Joao.HiringDev.Dominio.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Joao.HiringDev.Dominio.Core.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Joao.HiringDev.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../Joao.HiringDev.Dominio/Joao.HiringDev.Dominio.csproj",
+      "msbuildProject": "../Joao.HiringDev.Dominio/Joao.HiringDev.Dominio.csproj"
+    },
+    "Joao.HiringDev.Dominio.Core/1.0.0": {
+      "type": "project",
+      "path": "../Joao.HiringDev.Dominio.Core/Joao.HiringDev.Dominio.Core.csproj",
+      "msbuildProject": "../Joao.HiringDev.Dominio.Core/Joao.HiringDev.Dominio.Core.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Joao.HiringDev.Dominio >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\João\\.nuget\\packages\\": {}
@@ -34,7 +77,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio\\Joao.HiringDev.Dominio.csproj": {
+              "projectPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio\\Joao.HiringDev.Dominio.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

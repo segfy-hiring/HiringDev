@@ -1,6 +1,7 @@
 ﻿using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
 using Joao.HiringDev.Dominio.Entidades;
+using Joao.HiringDev.Dominio.Responses;
 using Joao.HiringDev.Servicos.Core.IServicos;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace Joao.HiringDev.Servicos.Servicos
 {
     public class YoutubeApiServico : IYoutubeApiServico
     {
-        public async Task Obter(string busca)
+        public async Task<YoutubeApiServicoResponse> Obter(string busca)
         {
 
             var youTubeService = new YouTubeService(new BaseClientService.Initializer()
@@ -34,14 +35,36 @@ namespace Joao.HiringDev.Servicos.Servicos
                 {
                     case "youtube#video":
                         
-                        videos.Add(new VideoYoutube(item.Id.VideoId, item.Snippet.Title));
+                        videos.Add(new VideoYoutube(
+                                        item.Id.VideoId, 
+                                        item.Snippet.Title,
+                                        item.Snippet.Description,
+                                        item.Snippet.ChannelId,
+                                        item.Snippet.ChannelTitle,
+                                        item.Snippet.PublishedAtRaw,
+                                        item.Snippet.LiveBroadcastContent,
+                                        item.Snippet.ETag,
+                                        item.Snippet.Thumbnails.High.Url
+                                        ));
                         break;
 
                     case "youtube#channel":
-                        canais.Add(new CanalYoutube(item.Id.ChannelId, item.Snippet.Title));
+                        canais.Add(new CanalYoutube(
+                                        item.Id.ChannelId,
+                                        item.Snippet.Title,
+                                        item.Snippet.Description,
+                                        item.Snippet.ChannelId,
+                                        item.Snippet.ChannelTitle,
+                                        item.Snippet.PublishedAtRaw,
+                                        item.Snippet.LiveBroadcastContent,
+                                        item.Snippet.ETag,
+                                        item.Snippet.Thumbnails.High.Url
+                            ));
                         break;
                 }
             }
+
+            return new YoutubeApiServicoResponse() { Videos = videos, Canais = canais};
         }
     }
 }
