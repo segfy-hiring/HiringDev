@@ -18,3 +18,16 @@ C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos
 C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\obj\Debug\netcoreapp3.1\Joao.HiringDev.Servicos.Core.dll
 C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\obj\Debug\netcoreapp3.1\Joao.HiringDev.Servicos.Core.pdb
 C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\obj\Debug\netcoreapp3.1\Joao.HiringDev.Servicos.Core.genruntimeconfig.cache
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\bin\Debug\netcoreapp3.1\Joao.HiringDev.Dominio.deps.json
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\bin\Debug\netcoreapp3.1\Joao.HiringDev.Dominio.runtimeconfig.json
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\bin\Debug\netcoreapp3.1\Joao.HiringDev.Dominio.runtimeconfig.dev.json
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\bin\Debug\netcoreapp3.1\Joao.HiringDev.Dominio.Core.deps.json
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\bin\Debug\netcoreapp3.1\Joao.HiringDev.Dominio.Core.runtimeconfig.json
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\bin\Debug\netcoreapp3.1\Joao.HiringDev.Dominio.Core.runtimeconfig.dev.json
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\bin\Debug\netcoreapp3.1\Joao.HiringDev.Dominio.Core.exe
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\bin\Debug\netcoreapp3.1\Joao.HiringDev.Dominio.exe
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\bin\Debug\netcoreapp3.1\Joao.HiringDev.Dominio.Core.dll
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\bin\Debug\netcoreapp3.1\Joao.HiringDev.Dominio.dll
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\bin\Debug\netcoreapp3.1\Joao.HiringDev.Dominio.pdb
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\bin\Debug\netcoreapp3.1\Joao.HiringDev.Dominio.Core.pdb
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Servicos.Core\obj\Debug\netcoreapp3.1\Joao.HiringDev.Servicos.Core.csproj.CopyComplete

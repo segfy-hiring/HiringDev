@@ -1,10 +1,15 @@
+using Joao.HiringDev.Infraestrutura.Contextos;
+using Joao.HiringDev.Infraestrutura.Core.IRepositorios;
+using Joao.HiringDev.Infraestrutura.Repositorios;
 using Joao.HiringDev.Servicos.Core.IServicos;
 using Joao.HiringDev.Servicos.Servicos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MySqlConnector;
 
 namespace Joao.HiringDev.Apresentacao
 {
@@ -22,6 +27,12 @@ namespace Joao.HiringDev.Apresentacao
         {
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation();
+
+            string mySqlConnectionStr = Configuration.GetConnectionString("Default");
+            services.AddDbContextPool<Context>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
+            
+            services.AddScoped<IRepositorioVideoYoutube, RepositorioVideoYoutube>();
+            services.AddScoped<IRepositorioCanalYoutube, RepositorioCanalYoutube>();
 
             services.AddScoped<IYoutubeApiServico, YoutubeApiServico>();
 

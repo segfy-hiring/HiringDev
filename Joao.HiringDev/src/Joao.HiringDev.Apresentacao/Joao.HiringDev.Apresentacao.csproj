@@ -8,9 +8,16 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.17" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.RazorPages" Version="2.2.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Joao.HiringDev.Infraestrutura.Core\Joao.HiringDev.Infraestrutura.Core.csproj" />
+    <ProjectReference Include="..\..\Joao.HiringDev.Infraestrutura\Joao.HiringDev.Infraestrutura.csproj" />
     <ProjectReference Include="..\Joao.HiringDev.Servicos.Core\Joao.HiringDev.Servicos.Core.csproj" />
     <ProjectReference Include="..\Joao.HiringDev.Servicos\Joao.HiringDev.Servicos.csproj" />
   </ItemGroup>

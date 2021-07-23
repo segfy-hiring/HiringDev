@@ -1,0 +1,271 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura\\Joao.HiringDev.Infraestrutura.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura.Core\\Joao.HiringDev.Infraestrutura.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura.Core\\Joao.HiringDev.Infraestrutura.Core.csproj",
+        "projectName": "Joao.HiringDev.Infraestrutura.Core",
+        "projectPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura.Core\\Joao.HiringDev.Infraestrutura.Core.csproj",
+        "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\João\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://s-apl01:8088/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio\\Joao.HiringDev.Dominio.csproj": {
+                "projectPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio\\Joao.HiringDev.Dominio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Flunt": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura\\Joao.HiringDev.Infraestrutura.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura\\Joao.HiringDev.Infraestrutura.csproj",
+        "projectName": "Joao.HiringDev.Infraestrutura",
+        "projectPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura\\Joao.HiringDev.Infraestrutura.csproj",
+        "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\João\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://s-apl01:8088/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura.Core\\Joao.HiringDev.Infraestrutura.Core.csproj": {
+                "projectPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura.Core\\Joao.HiringDev.Infraestrutura.Core.csproj"
+              },
+              "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio\\Joao.HiringDev.Dominio.csproj": {
+                "projectPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio\\Joao.HiringDev.Dominio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Flunt": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio.Core\\Joao.HiringDev.Dominio.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio.Core\\Joao.HiringDev.Dominio.Core.csproj",
+        "projectName": "Joao.HiringDev.Dominio.Core",
+        "projectPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio.Core\\Joao.HiringDev.Dominio.Core.csproj",
+        "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\João\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://s-apl01:8088/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio\\Joao.HiringDev.Dominio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio\\Joao.HiringDev.Dominio.csproj",
+        "projectName": "Joao.HiringDev.Dominio",
+        "projectPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio\\Joao.HiringDev.Dominio.csproj",
+        "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\João\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://s-apl01:8088/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio.Core\\Joao.HiringDev.Dominio.Core.csproj": {
+                "projectPath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Dominio.Core\\Joao.HiringDev.Dominio.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

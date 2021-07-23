@@ -5,60 +5,158 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Bem-Vindo!</h1>
     <p>Buscador de vídeos e canais do Youtube desenvolvido com ASP.NET Core.</p>
 
     <hr />
 
 </div>
 
-<form asp-action="Index" asp-controller="Home" method="get" class="row">
-    <div class="col col-9">
-        @Html.LabelFor(m => m.PalavraChave, htmlAttributes: new { @class = "form-label" })
-        @Html.EditorFor(m => m.PalavraChave, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(m => m.PalavraChave, "", new { @class = "text-danger" })
+<form asp-action="Index" asp-controller="Home" method="get">
+
+    <div class="row">
+        <div class="col col-12">
+            <p>Informa uma palavra-chave ou uma frase para busca vídeos e canais realacionados</p>
+        </div>
     </div>
 
-    <div class="col col-3">
-        <button type="submit" class="btn btn-dark col-12 btn-block mb-3"><i class="fas fa-search"></i> Pesquisar... </button>
+    <div class="row">
+        <div class="col col-9">
+            @Html.EditorFor(m => m.PalavraChave, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.ValidationMessageFor(m => m.PalavraChave, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col col-3">
+            <button type="submit" class="btn btn-dark col-12 btn-block mb-3"><i class="fas fa-search"></i> Pesquisar... </button>
+        </div>
     </div>
 </form>
 
-@if (Model.YoutubeApiServico.Videos != null && Model.YoutubeApiServico.Videos.Any() && Model.YoutubeApiServico.Canais != null && Model.YoutubeApiServico.Canais.Any())
+@if (Model.YoutubeApiServico != null)
 {
+    @if (Model.YoutubeApiServico.Videos != null && Model.YoutubeApiServico.Canais != null)
+    {
+        <div class="row">
 
-    <div class="card">
-        <div class="card-body">
-            @if (Model.YoutubeApiServico.Videos != null && Model.YoutubeApiServico.Videos.Any())
-            {
+            <div class="col g-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title">Canais</h5>
+                        @if (Model.YoutubeApiServico.Canais != null && Model.YoutubeApiServico.Canais.Any())
+                        {
+                            <table class="table table-striped table-sm table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Título</th>
+                                        <th scope="col">Descrição</th>
+                                        <th scope="col">Criação</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var canal in Model.YoutubeApiServico.Canais)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @canal.Title
+                                            </td>
+                                            <td>
+                                                @canal.Description
+                                            </td>
+                                            <td>
+                                                @canal.PublishedAtRaw
+                                            </td>
+                                            <td>
+                                                Mais...
+                                            </td>
+                                            <td>
+                                                Link
+                                            </td>
+                                        </tr>
+                                    }
 
-            }
-            else
-            {
-
-            }
-            This is some text within a card body.
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <div class="alert alert-info" role="alert">
+                                Não foi encontra registros para a sua busca!
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="card">
-        <div class="card-body">
-            @if (Model.YoutubeApiServico.Canais != null && Model.YoutubeApiServico.Canais.Any())
-            {
+        <div class="row">
+            <div class="col g-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title">Videos</h5>
+                        @if (Model.YoutubeApiServico.Videos != null && Model.YoutubeApiServico.Videos.Any())
+                        {
+                            <table class="table table-striped table-sm table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Título</th>
+                                        <th scope="col">Descrição</th>
+                                        <th scope="col">Publicação</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var video in Model.YoutubeApiServico.Videos)
+                                    {
+                                        <tr>
 
-            }
-            else
-            {
+                                            <td>
+                                                @video.Title
+                                            </td>
+                                            <td>
+                                                @video.Description
+                                            </td>
+                                            <td>
+                                                @video.PublishedAtRaw
+                                            </td>
+                                            <td>
+                                                Mais...
+                                            </td>
+                                            <td>
+                                                Link
+                                            </td>
+                                        </tr>
+                                    }
 
-            }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <div class="alert alert-info" role="alert">
+                                Não foi encontra registros para a sua busca!
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>
-}
-else
-{
-    <div class="card">
-        <div class="card-body">
-            This is some text within a card body.
+
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-body">
+                <div class="alert alert-info" role="alert">
+                    Não foi encontra registros para a sua busca!
+                </div>
+            </div>
         </div>
-    </div>
+    }
+
+
 }

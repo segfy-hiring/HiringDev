@@ -1,6 +1,8 @@
-﻿namespace Joao.HiringDev.Dominio.Entidades
+﻿using Joao.HiringDev.Dominio.Core.Interfaces;
+
+namespace Joao.HiringDev.Dominio.Entidades
 {
-    public class CanalYoutube
+    public class CanalYoutube : IEntidade
     {        
         public string Id { get; private set; }
         public string Title { get; private set; }

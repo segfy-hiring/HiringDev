@@ -32,6 +32,7 @@
       "Joao.HiringDev.Servicos/1.0.0": {
         "dependencies": {
           "Google.Apis.YouTube.v3": "1.52.0.2378",
+          "Joao.HiringDev.Dominio": "1.0.0",
           "Joao.HiringDev.Servicos.Core": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -397,7 +398,29 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Joao.HiringDev.Dominio/1.0.0": {
+        "dependencies": {
+          "Joao.HiringDev.Dominio.Core": "1.0.0"
+        },
+        "runtime": {
+          "Joao.HiringDev.Dominio.dll": {}
+        },
+        "compile": {
+          "Joao.HiringDev.Dominio.dll": {}
+        }
+      },
+      "Joao.HiringDev.Dominio.Core/1.0.0": {
+        "runtime": {
+          "Joao.HiringDev.Dominio.Core.dll": {}
+        },
+        "compile": {
+          "Joao.HiringDev.Dominio.Core.dll": {}
+        }
+      },
       "Joao.HiringDev.Servicos.Core/1.0.0": {
+        "dependencies": {
+          "Joao.HiringDev.Dominio": "1.0.0"
+        },
         "runtime": {
           "Joao.HiringDev.Servicos.Core.dll": {}
         },
@@ -2139,6 +2162,16 @@
       "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "Joao.HiringDev.Dominio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Joao.HiringDev.Dominio.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Joao.HiringDev.Servicos.Core/1.0.0": {
       "type": "project",

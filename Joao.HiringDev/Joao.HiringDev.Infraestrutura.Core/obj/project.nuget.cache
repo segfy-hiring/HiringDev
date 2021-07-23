@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "RcPjh8JWcT7a/vCMHNzprS8vOI0ofwKIzeNs/mV4SUpicFNP5BQz3EXC+DnIR/d7mwYLSOCkNrfqQDj33gV0Og==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura.Core\\Joao.HiringDev.Infraestrutura.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\João\\.nuget\\packages\\flunt\\2.0.4\\flunt.2.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
