@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MySqlConnector;
 
 namespace Joao.HiringDev.Apresentacao
 {
@@ -30,12 +29,13 @@ namespace Joao.HiringDev.Apresentacao
 
             string mySqlConnectionStr = Configuration.GetConnectionString("Default");
             services.AddDbContextPool<Context>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
-            
+           
             services.AddScoped<IRepositorioVideoYoutube, RepositorioVideoYoutube>();
             services.AddScoped<IRepositorioCanalYoutube, RepositorioCanalYoutube>();
 
             services.AddScoped<IYoutubeApiServico, YoutubeApiServico>();
 
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

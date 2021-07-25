@@ -1,0 +1,35 @@
+﻿@model Joao.HiringDev.Apresentacao.Models.Home.CanalYoutubeViewModel
+
+@{
+    ViewData["Title"] = "Canal Page";
+}
+
+<div class="text-center">
+    <h3>@Model.Title</h3>
+    <p>Os dados aqui exibidos são obtidos a partir da base de dados</p>
+
+    <hr />
+
+</div>
+
+<div class="row">
+    <div class="col col-3">
+        <img src="@Model.ThumbnailUrlVideoImage" width="200" />
+    </div>
+    <div class="col col-9">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title h5">Informações sobre o canal</div>
+                <p><strong>ID: </strong> @Model.Id</p>
+                <p><strong>Title: </strong> @Model.Title</p>
+                <p><strong>Description: </strong> @Model.Description</p>
+                <p><strong>ChannelID: </strong> @Model.ChannelId</p>
+                <p><strong>ChannelTitle: </strong> @Model.ChannelTitle</p>
+                <p><strong>PublishedAtRaw: </strong> @Model.PublishedAtRaw</p>
+                <p><strong>LiveBroadcastContent: </strong> @Model.LiveBroadcastContent</p>
+                <p><strong>ETag: </strong> @Model.ETag</p>
+                <p><strong>ThumbnailUrlVideoImage: </strong> @Model.ThumbnailUrlVideoImage</p>
+            </div>
+        </div>
+    </div>
+</div>

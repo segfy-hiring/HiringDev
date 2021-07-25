@@ -13,7 +13,7 @@ create table VideosYoutube
     LiveBroadcastContent varchar(255),
     ETag varchar(1000),
     ThumbnailUrlVideoImage varchar(1000)
-) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 create table CanaisYoutube 
 (
@@ -26,10 +26,13 @@ create table CanaisYoutube
     LiveBroadcastContent varchar(255),
     ETag varchar(1000),
     ThumbnailUrlVideoImage varchar(1000)
-) CHARACTER SET utf8 COLLATE utf8_unicode_ci ;
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci ;
 
--- drop table CanaisYoutube;
+ drop table CanaisYoutube;
 -- drop table VideosYoutube;
 
 select * from CanaisYoutube;
 select * from VideosYoutube;
+
+select * from CanaisYoutube where Id = 'UCvkYQZ80HOAV8hvngztdMOg';
+delete from CanaisYoutube where Id is not null;

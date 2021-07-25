@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Joao.HiringDev.Dominio.Core
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Joao.HiringDev.Dominio", "src\Joao.HiringDev.Dominio\Joao.HiringDev.Dominio.csproj", "{35D1D6FB-4C6D-4359-ACF6-41FB8F445584}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joao.HiringDev.Infraestrutura", "Joao.HiringDev.Infraestrutura\Joao.HiringDev.Infraestrutura.csproj", "{D266A49F-1DC6-4157-ADF1-37F61E5BFC50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Joao.HiringDev.Infraestrutura", "Joao.HiringDev.Infraestrutura\Joao.HiringDev.Infraestrutura.csproj", "{D266A49F-1DC6-4157-ADF1-37F61E5BFC50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joao.HiringDev.Infraestrutura.Core", "Joao.HiringDev.Infraestrutura.Core\Joao.HiringDev.Infraestrutura.Core.csproj", "{242988C2-3F5A-44C7-9F44-72F388D659D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Joao.HiringDev.Infraestrutura.Core", "Joao.HiringDev.Infraestrutura.Core\Joao.HiringDev.Infraestrutura.Core.csproj", "{242988C2-3F5A-44C7-9F44-72F388D659D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joao.HiringDev.Testes", "testes\Joao.HiringDev.Testes\Joao.HiringDev.Testes.csproj", "{CE7198FB-67B1-476F-A722-F3F02A8123DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{242988C2-3F5A-44C7-9F44-72F388D659D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{242988C2-3F5A-44C7-9F44-72F388D659D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{242988C2-3F5A-44C7-9F44-72F388D659D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE7198FB-67B1-476F-A722-F3F02A8123DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE7198FB-67B1-476F-A722-F3F02A8123DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE7198FB-67B1-476F-A722-F3F02A8123DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE7198FB-67B1-476F-A722-F3F02A8123DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

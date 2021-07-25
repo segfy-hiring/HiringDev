@@ -1,12 +1,13 @@
-﻿using Joao.HiringDev.Apresentacao.Models;
+﻿using AutoMapper;
+using Joao.HiringDev.Apresentacao.Models;
 using Joao.HiringDev.Apresentacao.Models.Home;
 using Joao.HiringDev.Dominio.Responses;
 using Joao.HiringDev.Infraestrutura.Contextos;
 using Joao.HiringDev.Infraestrutura.Core.IRepositorios;
 using Joao.HiringDev.Servicos.Core.IServicos;
-using Joao.HiringDev.Servicos.Servicos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,18 +21,22 @@ namespace Joao.HiringDev.Apresentacao.Controllers
 
         private readonly Context _context;
 
+        private readonly IMapper _mapper;
+
         private readonly IRepositorioVideoYoutube _repositorioVideoYoutube;
         private readonly IRepositorioCanalYoutube _repositorioCanalYoutube;
 
         public HomeController(
                         ILogger<HomeController> logger,
                         Context context,
+                        IMapper mapper,
                         IYoutubeApiServico youtubeApiServico,
                         IRepositorioVideoYoutube repositorioVideoYoutube,
                         IRepositorioCanalYoutube repositorioCanalYoutube)
         {
             _logger = logger;
             _context = context;
+            _mapper = mapper;
 
             _youtubeApiServico = youtubeApiServico;
 
@@ -48,6 +53,18 @@ namespace Joao.HiringDev.Apresentacao.Controllers
             }
 
             return View(viewModel);
+        }
+
+        public IActionResult VideoDetalhar(string id)
+        {
+            var video = _mapper.Map<VideoYoutubeViewModel>(_repositorioVideoYoutube.ObterVideo(id));
+            return View(video);
+        }
+
+        public IActionResult CanalDetalhar(string id)
+        {
+            var canal = _mapper.Map<CanalYoutubeViewModel>(_repositorioCanalYoutube.ObterCanal(id));
+            return View(canal);
         }
 
         public IActionResult Privacy()
@@ -75,7 +92,7 @@ namespace Joao.HiringDev.Apresentacao.Controllers
             {
                 foreach (var canal in response.Canais)
                 {
-                    _repositorioCanalYoutube.Inserir(response.Canais);
+                    _repositorioCanalYoutube.Inserir(canal);
                 }
             }
         }

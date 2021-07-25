@@ -8,5 +8,6 @@ namespace Joao.HiringDev.Infraestrutura.Core.IRepositorios
         bool Inserir(VideoYoutube videoYoutube);
         bool Inserir(List<VideoYoutube> videosYoutube);
         List<VideoYoutube> Obter(string palavraChave);
+        VideoYoutube ObterVideo(string id);
     }
 }

@@ -58,5 +58,17 @@ namespace Joao.HiringDev.Infraestrutura.Repositorios
                 return new List<VideoYoutube>();
             }
         }
+
+        public VideoYoutube ObterVideo(string id)
+        {
+            try
+            {
+                return _contexto.VideosYoutube.Where(x => x.Id.Equals(id)).FirstOrDefault();
+            }catch(Exception ex)
+            {
+                AddNotification("RepositorioVideoYoutube", ex.Message);
+                return null;
+            }
+        }
     }
 }
