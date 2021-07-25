@@ -50,6 +50,11 @@ namespace Joao.HiringDev.Infraestrutura.Repositorios
         {
             try
             {
+                if (string.IsNullOrEmpty(palavraChave))
+                {
+                    return _contexto.VideosYoutube.ToList();
+                }
+
                 return _contexto.VideosYoutube.Where(x => x.Title.Equals(palavraChave) || x.Description.Equals(palavraChave)).ToList();
             }
             catch(Exception ex)

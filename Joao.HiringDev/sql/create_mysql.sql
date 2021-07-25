@@ -28,7 +28,7 @@ create table CanaisYoutube
     ThumbnailUrlVideoImage varchar(1000)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci ;
 
- drop table CanaisYoutube;
+ -- drop table CanaisYoutube;
 -- drop table VideosYoutube;
 
 select * from CanaisYoutube;

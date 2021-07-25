@@ -7,7 +7,6 @@ using Joao.HiringDev.Infraestrutura.Core.IRepositorios;
 using Joao.HiringDev.Servicos.Core.IServicos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -67,6 +66,19 @@ namespace Joao.HiringDev.Apresentacao.Controllers
             return View(canal);
         }
 
+        public IActionResult ExibirBase()
+        {   
+            FiltroHomeViewModel viewModel = new FiltroHomeViewModel(){
+                                                YoutubeApiServico = new YoutubeApiServicoResponse()
+                                                    {
+                                                        Videos = _repositorioVideoYoutube.Obter(""),
+                                                        Canais = _repositorioCanalYoutube.Obter("")
+                                                    }
+                                                };
+
+            return View(viewModel);
+        }
+
         public IActionResult Privacy()
         {
             return View();
@@ -84,7 +96,10 @@ namespace Joao.HiringDev.Apresentacao.Controllers
             {
                 foreach (var video in response.Videos)
                 {
-                    _repositorioVideoYoutube.Inserir(video);
+                    if(_repositorioVideoYoutube.ObterVideo(video.Id) == null)
+                    {
+                        _repositorioVideoYoutube.Inserir(video);
+                    }
                 }
             }
 
@@ -92,7 +107,10 @@ namespace Joao.HiringDev.Apresentacao.Controllers
             {
                 foreach (var canal in response.Canais)
                 {
-                    _repositorioCanalYoutube.Inserir(canal);
+                    if (_repositorioCanalYoutube.ObterCanal(canal.Id) == null)
+                    {
+                        _repositorioCanalYoutube.Inserir(canal);
+                    }
                 }
             }
         }

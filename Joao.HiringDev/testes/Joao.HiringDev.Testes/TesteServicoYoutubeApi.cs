@@ -1,5 +1,3 @@
-using Joao.HiringDev.Dominio.Entidades;
-using Joao.HiringDev.Dominio.Responses;
 using Joao.HiringDev.Servicos.Servicos;
 using System.Linq;
 using System.Threading.Tasks;

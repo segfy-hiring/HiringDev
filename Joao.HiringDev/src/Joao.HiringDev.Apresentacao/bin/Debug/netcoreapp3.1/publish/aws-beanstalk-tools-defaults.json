@@ -1,0 +1,20 @@
+
+{
+    "region" : "us-east-2",
+    "configuration" : "Debug",
+    "framework"     : "netcoreapp3.1",
+    "self-contained" : false,
+    "application"    : "JoaoHiringDevApresentacao",
+    "environment"    : "JoaoHiringDevApresentacao-prod",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-887a9fc3,sg-083639f80fcee6387\";\"aws:ec2:vpc,Subnets\"=\"subnet-59519724\"",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.2.3 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "joaohiringdev",
+    "instance-type"        : "t3a.medium",
+    "key-pair"             : "",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "nginx"
+}

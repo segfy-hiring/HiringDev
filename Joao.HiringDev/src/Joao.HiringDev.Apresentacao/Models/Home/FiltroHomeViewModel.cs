@@ -14,7 +14,9 @@ namespace Joao.HiringDev.Apresentacao.Models.Home
 
         public FiltroHomeViewModel()
         {
-
+            
         }
+
+
     }
 }
