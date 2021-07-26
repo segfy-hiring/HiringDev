@@ -1,6 +1,6 @@
 # Sobre a Aplicação
 
-- Asp net core 3.1
+- AspNet Core 3.1
 - Banco: MySQL
 - Para consulta API do Youtube foi usado o projeto/biblioteca https://developers.google.com/youtube/v3/code_samples/dotnet?hl=pt-br
 - AWS: http://joaohiringdev.us-east-2.elasticbeanstalk.com/
