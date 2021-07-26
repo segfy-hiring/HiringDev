@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "B++a1tupDQudQ8644+E3LYosEboHchPYuand8kP2MCAyb/UdwVBuh1LUzWjuiBXUJ4Kj/gmeIwJHE6zvsOHtXw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura.Core\\Joao.HiringDev.Infraestrutura.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\João\\.nuget\\packages\\flunt\\2.0.4\\flunt.2.0.4.nupkg.sha512",
+    "C:\\Users\\João\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\3.1.17\\microsoft.netcore.app.host.linux-x64.3.1.17.nupkg.sha512"
+  ],
+  "logs": []
+}
