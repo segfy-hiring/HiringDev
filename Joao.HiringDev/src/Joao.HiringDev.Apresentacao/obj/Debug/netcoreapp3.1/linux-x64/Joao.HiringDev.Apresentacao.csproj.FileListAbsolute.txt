@@ -450,3 +450,4 @@ C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Apresent
 C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Apresentacao\obj\Debug\netcoreapp3.1\linux-x64\Joao.HiringDev.Apresentacao.pdb
 C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Apresentacao\obj\Debug\netcoreapp3.1\linux-x64\Joao.HiringDev.Apresentacao.genruntimeconfig.cache
 C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Apresentacao\bin\Debug\netcoreapp3.1\linux-x64\aws-beanstalk-tools-defaults.json
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\src\Joao.HiringDev.Apresentacao\obj\Debug\netcoreapp3.1\linux-x64\Razor\Views\Home\ExibirBase.cshtml.g.cs

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OG0sO7sywAbajHxSYnQTjOeQIqG1QkGyEMV15VeYbexL1Ph0IRwZ0RQrQeZ7/Nn330OuHDMQLnSK2M0cffvnSw==",
+  "dgSpecHash": "uygWIUltGnT7EBcDKXGVyr9dOyDgFmvAGGBcgm6QHN/dTF8OqlYulFTMjFZyAgY1wditUVrfT+FRo/BlNNY3nA==",
   "success": true,
   "projectFilePath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\Joao.HiringDev.Infraestrutura\\Joao.HiringDev.Infraestrutura.csproj",
   "expectedPackageFiles": [
@@ -18,7 +18,8 @@
     "C:\\Users\\João\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
-    "C:\\Users\\João\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512"
+    "C:\\Users\\João\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
+    "C:\\Users\\João\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\3.1.17\\microsoft.netcore.app.host.linux-x64.3.1.17.nupkg.sha512"
   ],
   "logs": []
 }

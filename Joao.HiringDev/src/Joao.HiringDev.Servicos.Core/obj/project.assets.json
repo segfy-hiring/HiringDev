@@ -31,6 +31,37 @@
           "Microsoft.AspNetCore.App"
         ]
       }
+    },
+    ".NETCoreApp,Version=v3.1/linux-x64": {
+      "Joao.HiringDev.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Joao.HiringDev.Dominio.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Joao.HiringDev.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Joao.HiringDev.Dominio.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Joao.HiringDev.Dominio.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Joao.HiringDev.Dominio.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Joao.HiringDev.Dominio.Core.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      }
     }
   },
   "libraries": {
@@ -103,6 +134,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[3.1.17, 3.1.17]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -112,6 +149,11 @@
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "linux-x64": {
+        "#import": []
       }
     }
   }

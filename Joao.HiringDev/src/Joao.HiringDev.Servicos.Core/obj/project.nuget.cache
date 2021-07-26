@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UMbJGa0dClY7zCuj3P9JteG1aFPdtw618atJsjyPaKhdVznbZnrmVydeG7rp1uNK5I2HkTBQOXTgd4WkOAqaTg==",
+  "dgSpecHash": "7TUsqcOEcMPK+JESCBhbXvEwRIk+PbuvjRumw4a+VWisKXHSHnWAhgKDhLl+Fij/d8S4ylIItnMwLBZz5boyDQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\João\\source\\repos\\HiringDev\\Joao.HiringDev\\src\\Joao.HiringDev.Servicos.Core\\Joao.HiringDev.Servicos.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\João\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\3.1.17\\microsoft.netcore.app.host.linux-x64.3.1.17.nupkg.sha512"
+  ],
   "logs": []
 }
