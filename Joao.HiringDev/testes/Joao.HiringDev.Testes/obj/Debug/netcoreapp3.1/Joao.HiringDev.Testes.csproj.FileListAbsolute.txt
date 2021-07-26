@@ -514,3 +514,7 @@ C:\Users\João\source\repos\HiringDev\Joao.HiringDev\testes\Joao.HiringDev.Teste
 C:\Users\João\source\repos\HiringDev\Joao.HiringDev\testes\Joao.HiringDev.Testes\obj\Debug\netcoreapp3.1\Joao.HiringDev.Testes.pdb
 C:\Users\João\source\repos\HiringDev\Joao.HiringDev\testes\Joao.HiringDev.Testes\obj\Debug\netcoreapp3.1\Joao.HiringDev.Testes.genruntimeconfig.cache
 C:\Users\João\source\repos\HiringDev\Joao.HiringDev\testes\Joao.HiringDev.Testes\bin\Debug\netcoreapp3.1\aws-beanstalk-tools-defaults.json
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\testes\Joao.HiringDev.Testes\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\testes\Joao.HiringDev.Testes\bin\Debug\netcoreapp3.1\Moq.dll
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\testes\Joao.HiringDev.Testes\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\João\source\repos\HiringDev\Joao.HiringDev\testes\Joao.HiringDev.Testes\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
