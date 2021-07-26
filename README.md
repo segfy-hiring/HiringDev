@@ -1,3 +1,10 @@
+# Sobre a Aplicação
+
+- Asp net core 3.1
+- Banco: MySQL
+- Para consulta API do Youtube foi usado o projeto/biblioteca https://developers.google.com/youtube/v3/code_samples/dotnet?hl=pt-br
+- AWS: http://joaohiringdev.us-east-2.elasticbeanstalk.com/
+
 # Desafio técnico para desenvolvedores
 
 Construa uma nova solução restful, utilizando no backend e no front os frameworks de sua preferência, a qual deverá conectar na API do YouTube e disponibilizar as seguintes funcionalidades:
