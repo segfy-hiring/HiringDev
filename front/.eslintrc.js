@@ -1,0 +1,91 @@
+module.exports = {
+    root: true,
+    env: {
+      browser: true,
+      es2021: true,
+    },
+    extends: [
+      'airbnb-typescript',
+      'airbnb/hooks',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    ],
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
+      ecmaVersion: 2018,
+      sourceType: 'module',
+      project: 'tsconfig.json',
+      createDefaultProgram: true,
+    },
+    plugins: [
+      'react',
+      '@typescript-eslint',
+      'react-hooks',
+    ],
+    rules: {
+      'class-methods-use-this': 'off',
+      'linebreak-style': 'off',
+      'max-len': 'off',
+      'max-classes-per-file': ['error', 2],
+      'operator-linebreak': 'off',
+      'arrow-body-style': 'off',
+      'no-useless-catch': 'off',
+      'react/react-in-jsx-scope': 'off',
+      'react/jsx-props-no-spreading': 'off',
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'error',
+      'react/prop-types': 'off',
+      'react/require-default-props': 'off',
+      'react/jsx-filename-extension': [
+        1,
+        {
+          extensions: ['.tsx'],
+        },
+      ],
+      'import/prefer-default-export': 'off',
+      'import/extensions': [
+        'off',
+        'ignorePackages',
+        {
+          'd.ts': 'never',
+          ts: 'never',
+          tsx: 'never',
+        },
+      ],
+      'import/no-extraneous-dependencies': 'off',
+      'import/no-duplicates': 'off',
+      'import/order': 'off',
+      'import/no-self-import': 'off',
+      'import/no-cycle': [0, { ignoreExternal: true }],
+      'import/no-named-as-default': 'off',
+      'import/no-named-as-default-member': 'off',
+      'import/no-useless-path-segments': ['off', {
+        noUselessIndex: true,
+      }],
+      'jsx-a11y/mouse-events-have-key-events': 'off',
+      'jsx-a11y/no-static-element-interactions': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-inferrable-types': 'off',
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/dot-notation': 'off',
+      '@typescript-eslint/lines-between-class-members': 'off',
+      '@typescript-eslint/no-throw-literal': ['error'],
+      '@typescript-eslint/no-floating-promises': 'off',
+      '@typescript-eslint/unbound-method': [
+        'error',
+        {
+          ignoreStatic: true,
+        },
+      ],
+    },
+    settings: {
+      'import/resolver': {
+        typescript: {},
+      },
+    },
+  };

@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: postgres:alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_DB: "youtubetree"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "admin"
+    networks:
+      - banco
+
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - 80:80
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "dev@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "123456"
+    networks:
+      - banco
+
+volumes:
+  db-data:
+
+networks:
+  banco:
+    driver: bridge
