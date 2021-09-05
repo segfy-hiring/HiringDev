@@ -1,20 +1,68 @@
-# Desafio técnico para desenvolvedores
+# Items a implementar
 
-Construa uma nova solução restful, utilizando no backend e no front os frameworks de sua preferência, a qual deverá conectar na API do YouTube e disponibilizar as seguintes funcionalidades:
+- Deploy
+    - Configuração do Beanstalk foi toda executada, porém houve alguns problemas na configuração das variáveis de ambiente
+# Front
 
-- Botão para pesquisar canal/video;
-- Listar os canais/videos encontrados e salvos no banco;
-- Visualizar os detalhes de cada canal/video.
+Abrir o CLI na pasta **front** e executar os comandos a seguir:
 
-Alguns requisitos:
+```
+npm install
+npm run start
+```
 
-- Deve ser uma aplicação totalmente nova;
-- A solução deve estar em um repositório público do GitHub;
-- A aplicação deve armazenar as informações encontradas;
-- Utilizar MongoDB,  MySQL ou Postgres;
-- O deploy deve ser realizado, preferencialmente na AWS;
-- A aplicação precisa ter testes automatizados.
+# API
 
-Quando terminar, faça um Pull Request neste repo e avise-nos por email.
+É possível executar a API localmente com Banco de Dados **InMemory**. Para isso, altere a tag **Database:Memory = true** no arquivo **appsettings.(*).json**
 
-**IMPORTANTE:** se você não conseguir finalizar o teste, por favor nos diga o motivo e descreva quais foram as suas dificuldades. Claro que você também pode sugerir uma outra abordagem para avaliarmos seus skills técnicos, mas é com você para vender seu peixe, mostrar-nos do que é capaz.
+Caso false, é necessário configurar a string de conexão com o banco de dados, no caso, **Postgres**.
+
+# Tests
+
+Na pasta **server**, onde se encontra o projeto **sln**, executar o comando:
+
+```
+dotnet test
+```
+
+# Docker
+
+Docker está sendo usado apenas para subir o banco de dados do Postgres, sem precisar instalar localmente.
+
+Para subir os serviços do Banco
+```
+docker-compose up -d
+```
+
+### Serviços
+
+- Postgres Database -> http://postgres:5432
+- Postgres Admin -> http://localhost
+	- Usuário: dev@gmail.com
+	- Senha: 123456
+
+Para se conectar ao Banco a partir do Postgres Admin
+
+- Host -> postgres
+- Database -> youtubetree
+- User -> admin
+- Password -> admin
+
+# Migrations
+
+### Criar Migrations  
+
+
+> OBS: O CLI deve estar apontando para pasta raiz do projeto, onde se encontra o ***.sln**
+
+```
+dotnet ef migrations add Initial -p YoutubeTree.Data -s YoutubeTree.API
+```
+
+Na pasta raiz da API
+
+```
+dotnet ef database update -p YoutubeTree.Data -s YoutubeTree.API
+```
+
+Os scripts das Tabelas estão na pasta **/Script**
