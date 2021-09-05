@@ -6,8 +6,8 @@ namespace YoutubeTree.Domain
 {
     public interface ISubscriptionRepository
     {
-        Task<IEnumerable<Subscription>> Search(string query);
         Task<IEnumerable<Subscription>> GetAll();
+        Task<IEnumerable<Subscription>> GetByTerm(string term);
         Task<Subscription> GetById(Guid id);
         Task Create(Subscription subscription);
         Task Delete(Guid id);

@@ -25,13 +25,13 @@ namespace YoutubeTree.Domain
             HighThumbnail = highThumbnail;
         }
 
-        public string YoutubeId { get; set; }
-        public string Type { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public DateTime? PublishedAt { get; set; }
-        public string DefaultThumbnail { get; set; }
-        public string MediumThumbnail { get; set; }
-        public string HighThumbnail { get; set; }
+        public string YoutubeId { get; private set; }
+        public string Type { get; private set; }
+        public string Title { get; private set; }
+        public string Description { get; private set; }
+        public DateTime? PublishedAt { get; private set; }
+        public string DefaultThumbnail { get; private set; }
+        public string MediumThumbnail { get; private set; }
+        public string HighThumbnail { get; private set; }
     }
 }

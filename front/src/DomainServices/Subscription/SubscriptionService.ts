@@ -16,6 +16,14 @@ class SubscriptionService implements ISubscriptionService {
       throw error;
     }
   }
+
+  async delete(id: string): Promise<void> {
+    try {
+      await this.http.client.delete(`/api/v1/subscriptions/${id}`);
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export default SubscriptionService;

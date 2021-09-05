@@ -1,6 +1,6 @@
 using System;
 
-namespace YoutubeTree.API
+namespace YoutubeTree.Application
 {
     public class SubscriptionRequest
     {

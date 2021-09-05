@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using YoutubeTree.Domain;
+using YoutubeTree.Application;
 
 namespace YoutubeTree.API
 {
@@ -9,7 +10,8 @@ namespace YoutubeTree.API
     [Route("api/v1/subscriptions")]
     public class SubscriptionController : ControllerBase
     {
-        readonly ISubscriptionRepository _subscriptionRepository;
+        private readonly ISubscriptionRepository _subscriptionRepository;
+        
         public SubscriptionController(ISubscriptionRepository subscriptionRepository)
         {
             _subscriptionRepository = subscriptionRepository;    
@@ -20,7 +22,7 @@ namespace YoutubeTree.API
         {
             var subscriptions = await _subscriptionRepository.GetAll();
 
-            return Ok(new SubscriptionViewModel().ToMapMany(subscriptions));
+            return Ok(SubscriptionViewModel.ToMapMany(subscriptions));
         }
 
         [HttpGet("{id}")]
@@ -28,7 +30,7 @@ namespace YoutubeTree.API
         {
             var subscription = await _subscriptionRepository.GetById(id);
 
-            return Ok(new SubscriptionViewModel().ToMap(subscription));
+            return Ok(SubscriptionViewModel.ToMap(subscription));
         }
 
         [HttpPost]
@@ -50,7 +52,7 @@ namespace YoutubeTree.API
             return Ok();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             await _subscriptionRepository.Delete(id);

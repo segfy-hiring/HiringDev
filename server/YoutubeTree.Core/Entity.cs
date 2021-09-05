@@ -6,6 +6,11 @@ namespace YoutubeTree.Core
     {
         public Guid Id { get; private set; }
 
+        public Entity(Guid id)
+        {
+            Id = id;
+        }
+        
         public Entity()
         {
             Id = Guid.NewGuid();

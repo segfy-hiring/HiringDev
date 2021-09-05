@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using YoutubeTree.Data;
 
-namespace YoutubeTree.API.Migrations
+namespace YoutubeTree.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210829144911_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20210904131316_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -21,7 +21,7 @@ namespace YoutubeTree.API
             }
             else
             {
-                var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
+                var migrationsAssembly = typeof(DataContext).GetTypeInfo().Assembly.GetName().Name;
                 
                 services.AddDbContext<DataContext>(
                     options => {

@@ -1,6 +1,6 @@
 import HttpClientService from 'Infra/HttpClientService';
 import IYoutubeSearchService from './IYoutubeSearchService';
-import { YoutubeSearchViewModel } from './Types';
+import { PagedSearchViewModel } from './Types';
 
 class SubscriptionService implements IYoutubeSearchService {
   private http;
@@ -9,11 +9,11 @@ class SubscriptionService implements IYoutubeSearchService {
     this.http = HttpClientService;
   }
 
-  async search(query: string): Promise<YoutubeSearchViewModel[]> {
+  async search(query: string, nextPage = ''): Promise<PagedSearchViewModel> {
     try {
-      const result = await this.http.client.get(`/api/v1/search?query=${query}`);
+      const result = await this.http.client.get(`/api/v1/search?query=${query}&nextPage=${nextPage}`);
 
-      return result.data as YoutubeSearchViewModel[];
+      return result.data as PagedSearchViewModel;
     } catch (error) {
       throw error;
     }

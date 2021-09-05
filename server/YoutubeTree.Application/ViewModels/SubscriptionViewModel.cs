@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using YoutubeTree.Domain;
 
-namespace YoutubeTree.API
+namespace YoutubeTree.Application
 {
     public class SubscriptionViewModel
     {
@@ -15,8 +15,9 @@ namespace YoutubeTree.API
         public string DefaultThumbnail { get; set; }
         public string MediumThumbnail { get; set; }
         public string HighThumbnail { get; set; }
+        public bool IsSubscribed { get; set; }
 
-        public IEnumerable<SubscriptionViewModel> ToMapMany(IEnumerable<Subscription> subscriptions)
+        public static IEnumerable<SubscriptionViewModel> ToMapMany(IEnumerable<Subscription> subscriptions)
         {
             foreach (var subscription in subscriptions)
             {
@@ -31,11 +32,12 @@ namespace YoutubeTree.API
                     DefaultThumbnail = subscription.DefaultThumbnail,
                     MediumThumbnail = subscription.MediumThumbnail,
                     HighThumbnail = subscription.HighThumbnail,
+                    IsSubscribed = true
                 };
             }
         }
 
-        public SubscriptionViewModel ToMap(Subscription subscription)
+        public static SubscriptionViewModel ToMap(Subscription subscription)
         {
             return new SubscriptionViewModel
                 {
@@ -48,6 +50,7 @@ namespace YoutubeTree.API
                     DefaultThumbnail = subscription.DefaultThumbnail,
                     MediumThumbnail = subscription.MediumThumbnail,
                     HighThumbnail = subscription.HighThumbnail,
+                    IsSubscribed = true
                 };
         }
     }

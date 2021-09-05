@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Google.Apis.YouTube.v3;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using YoutubeTree.Application;
 using YoutubeTree.Domain;
 
 namespace YoutubeTree.API.Controllers
@@ -13,23 +14,19 @@ namespace YoutubeTree.API.Controllers
     [Route("api/v1/search")]
     public class SearchController : ControllerBase
     {
-        readonly ISubscriptionRepository _subscriptionRepository;
-        public SearchController(ISubscriptionRepository subscriptionRepository)
+        private readonly IYoutubeSearchService _youtubeSearchService;
+        public SearchController(IYoutubeSearchService youtubeSearchService)
         {
-            _subscriptionRepository = subscriptionRepository;
+            _youtubeSearchService = youtubeSearchService;
         }
 
+        [ProducesResponseType(typeof(PagedSearchResponse<SubscriptionViewModel>), 200)]
         [HttpGet]
-        public async Task<IActionResult> Search([FromQuery] string query)
+        public async Task<IActionResult> Search([FromQuery] string query, [FromQuery] string nextPage)
         {
-            var result = await _subscriptionRepository.Search(query);
+            var result = await _youtubeSearchService.Search(query, nextPage);
 
-            if (!result.Any())
-            {
-                return BadRequest();
-            }
-
-            return Ok(new SubscriptionViewModel().ToMapMany(result));
+            return Ok(result);
         }
     }
 }

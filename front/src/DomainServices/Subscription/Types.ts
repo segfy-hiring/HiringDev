@@ -4,7 +4,7 @@ export type SubscriptionViewModel = {
   type: string;
   title: string;
   description: string;
-  publishedAt: Date;
+  publishedAt: string;
   defaultThumbnail: string;
   mediumThumbnail: string;
   highThumbnail: string;
@@ -15,7 +15,7 @@ export type SubscriptionRequest = {
   type: string;
   title: string;
   description: string;
-  publishedAt: Date;
+  publishedAt: string;
   defaultThumbnail: string;
   mediumThumbnail: string;
   highThumbnail: string;
