@@ -1,6 +1,21 @@
-﻿@{ 
+﻿@model SkillTestSegfy.Web.Models.Home.YoutubeSearchModel
+@{
     ViewData["Title"] = "Skill Test Segfy";
     Layout = "_Layout";
 }
 
-<h1>Hello World!!</h1>
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(o => o.Term)
+    @*<input type="text" placeholder="Pesquise vídeos ou canais..." style="width: 100%;" />*@
+
+    <br>
+    <br>
+    <br>
+    
+    var count = 1;
+    @foreach (var desc in Model.Titles)
+    {
+        <p>@(count++) - @desc</p>
+    }
+}

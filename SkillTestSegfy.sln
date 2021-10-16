@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{64E9F132
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{AEE3F436-4375-448D-832A-218974384E4F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{BEBD75BE-68F2-4D6A-A517-8BB3506BB454}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillTestSegfy", "SkillTestSegfy\SkillTestSegfy.csproj", "{CBC7E122-576E-40B6-9CD2-5BB82C08F60D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{7FB7C01E-0CBB-41F8-A33F-D8B9AB2D0D15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FB7C01E-0CBB-41F8-A33F-D8B9AB2D0D15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FB7C01E-0CBB-41F8-A33F-D8B9AB2D0D15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBC7E122-576E-40B6-9CD2-5BB82C08F60D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBC7E122-576E-40B6-9CD2-5BB82C08F60D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBC7E122-576E-40B6-9CD2-5BB82C08F60D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBC7E122-576E-40B6-9CD2-5BB82C08F60D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8DEADFE3-C2F9-4473-9BAA-DEFFAB9D181C} = {AEE3F436-4375-448D-832A-218974384E4F}
 		{7FB7C01E-0CBB-41F8-A33F-D8B9AB2D0D15} = {64E9F132-152C-4A07-9A51-DA2557FCFC23}
+		{CBC7E122-576E-40B6-9CD2-5BB82C08F60D} = {BEBD75BE-68F2-4D6A-A517-8BB3506BB454}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F4622C9-18A2-4B3C-8191-AF813B6A5D7B}

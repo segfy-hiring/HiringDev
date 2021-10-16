@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SkillTestSegfy.Infrastructure.Services.YoutubeApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,9 @@ namespace SkillTestSegfy.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
+
+            services.AddScoped<IYoutubeApiService, YoutubeApiService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
