@@ -1,5 +1,6 @@
 ﻿using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
+using Google.Apis.YouTube.v3.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,50 +9,68 @@ namespace SkillTestSegfy.Infrastructure.Services.YoutubeApi
 {
     public class YoutubeApiService : IYoutubeApiService
     {
-        public async Task<IEnumerable<string>> Search(string term)
+        private const string ApiKey = "AIzaSyBQEHRxdlcLP-tMjidzf4DE8uptV5VvFaA";
+        private const string ApplicationName = "SkillTestSegfy";
+
+        public YoutubeApiService()
         {
-            var youtubeService = new YouTubeService(new BaseClientService.Initializer
+            YoutubeService = new YouTubeService(new BaseClientService.Initializer
             {
-                ApiKey = "AIzaSyBQEHRxdlcLP-tMjidzf4DE8uptV5VvFaA",
-                ApplicationName = "SkillTestSegfy"
+                ApiKey = ApiKey,
+                ApplicationName = ApplicationName,
             });
+        }
 
-            var searchListRequest = youtubeService.Search.List("snippet");
-            searchListRequest.Q = term; // Replace with your search term.
-            searchListRequest.MaxResults = 20;
+        private YouTubeService YoutubeService { get; }
 
-            // Call the search.list method to retrieve results matching the specified query term.
-            var searchListResponse = await searchListRequest.ExecuteAsync();
+        public async Task<IEnumerable<YoutubeItem>> Search(string term)
+        {
+            var request = YoutubeService.Search.List("snippet");
+            request.Q = term;
+            request.MaxResults = 20;
 
-            return searchListResponse.Items.Select(o => o.Snippet.Title);
+            var response = await request.ExecuteAsync();
 
-            //var videos = new List<SearchResult>();
-            ////var channels = new List<string>();
-            ////var playlists = new List<string>();
+            foreach (var item in response.Items)
+            {
+                var t = item;
+            }
 
-            // Add each result to the appropriate list, and then display the lists of
-            // matching videos, channels, and playlists.
-            //foreach (var searchResult in searchListResponse.Items)
-            //{
-            //    switch (searchResult.Id.Kind)
-            //    {
-            //        case "youtube#video":
-            //            videos.Add(String.Format("{0} ({1})", searchResult.Snippet.Title, searchResult.Id.VideoId));
-            //            break;
+            var items = response.Items
+                .Select(o => new YoutubeItem
+                {
+                    Id = GetYoutubeId(o.Id),
+                    Type = GetYoutubeType(o.Id.Kind),
+                    Title = o.Snippet?.Title,
+                    Description = o.Snippet?.Description,
+                    ThumbnailUrl = o.Snippet?.Thumbnails?.High?.Url,
+                })
+                .Where(o => o.Type != YoutubeItemType.Unknown)
+                .ToList();
 
-            //        case "youtube#channel":
-            //            channels.Add(String.Format("{0} ({1})", searchResult.Snippet.Title, searchResult.Id.ChannelId));
-            //            break;
+            return items;
+        }
 
-            //        case "youtube#playlist":
-            //            playlists.Add(String.Format("{0} ({1})", searchResult.Snippet.Title, searchResult.Id.PlaylistId));
-            //            break;
-            //    }
-            //}
+        private static YoutubeItemType GetYoutubeType(string kind)
+        {
+            return kind switch
+            {
+                "youtube#video" => YoutubeItemType.Video,
+                "youtube#channel" => YoutubeItemType.Channel,
+                "youtube#playlist" => YoutubeItemType.Playlist,
+                _ => YoutubeItemType.Unknown,
+            };
+        }
 
-            //Console.WriteLine(String.Format("Videos:\n{0}\n", string.Join("\n", videos)));
-            //Console.WriteLine(String.Format("Channels:\n{0}\n", string.Join("\n", channels)));
-            //Console.WriteLine(String.Format("Playlists:\n{0}\n", string.Join("\n", playlists)));
+        private static string GetYoutubeId(ResourceId id)
+        {
+            return GetYoutubeType(id.Kind) switch
+            {
+                YoutubeItemType.Video => id.VideoId,
+                YoutubeItemType.Channel => id.ChannelId,
+                YoutubeItemType.Playlist => id.PlaylistId,
+                _ => null,
+            };
         }
     }
 }

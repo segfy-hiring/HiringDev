@@ -5,6 +5,6 @@ namespace SkillTestSegfy.Infrastructure.Services.YoutubeApi
 {
     public interface IYoutubeApiService
     {
-        Task<IEnumerable<string>> Search(string term);
+        Task<IEnumerable<YoutubeItem>> Search(string term);
     }
 }
