@@ -2,7 +2,11 @@
 using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
 using Google.Apis.YouTube.v3.Data;
+using Microsoft.EntityFrameworkCore;
+using SkillTestSegfy.Domain.Entities;
+using SkillTestSegfy.Infrastructure.Database;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,23 +14,20 @@ namespace SkillTestSegfy.Infrastructure.Services.Youtube
 {
     public class YoutubeApiService : IYoutubeApiService
     {
-        public YoutubeApiService()
+        public YoutubeApiService(DatabaseContext context)
         {
+            DatabaseContext = context;
             YoutubeService = new YouTubeService(new BaseClientService.Initializer
             {
-                // main
-                //ApiKey = Environment.GetEnvironmentVariable("YoutubeApiKeyMain"),
-                //ApplicationName = Environment.GetEnvironmentVariable("YoutubeApiProjectMain"),
-
-                // alt
-                ApiKey = Environment.GetEnvironmentVariable("YoutubeApiKeyAlt"),
-                ApplicationName = Environment.GetEnvironmentVariable("YoutubeApiProjectAlt"),
+                ApiKey = ConfigManager.YoutubeApiKey,
+                ApplicationName = ConfigManager.YoutubeApiProject,
             });
         }
 
+        private DatabaseContext DatabaseContext { get; }
         private YouTubeService YoutubeService { get; }
 
-        public async Task<YoutubeSearchResponse> Search(string term, long maxResults, YoutubeItemType? type)
+        public async Task<YoutubeSearchResponse> Search(string term, int maxResults, YoutubeItemType? type)
         {
             try
             {
@@ -54,17 +55,20 @@ namespace SkillTestSegfy.Infrastructure.Services.Youtube
                     var t = item;
                 }
 
+                var now = DateTime.Now;
                 var items = response.Items
-                    .Select(o => new YoutubeItem
-                    {
-                        Id = GetYoutubeId(o.Id),
-                        Type = GetYoutubeType(o.Id?.Kind),
-                        Title = o.Snippet?.Title,
-                        Description = o.Snippet?.Description,
-                        ThumbnailUrl = o.Snippet?.Thumbnails?.High?.Url,
-                    })
+                    .Select(o => new YoutubeItem(
+                        now,
+                        GetYoutubeType(o.Id?.Kind),
+                        GetYoutubeId(o.Id),
+                        o.Snippet?.Title,
+                        o.Snippet?.Description,
+                        o.Snippet?.Thumbnails?.High?.Url
+                    ))
                     .Where(IsValidItem)
                     .ToList();
+
+                await SaveHistory(items);
 
                 return new YoutubeSearchResponse(true, items, null);
             }
@@ -84,6 +88,30 @@ namespace SkillTestSegfy.Infrastructure.Services.Youtube
 
                 return new YoutubeSearchResponse(false, null, "Houve um erro inesperado na pesquisa. Por favor, tente novamente mais tarde.");
             }
+        }
+
+        public async Task<IEnumerable<YoutubeItem>> GetHistory(string term, int maxResults, YoutubeItemType? type)
+        {
+            var repository = DatabaseContext.Set<YoutubeItem>();
+            var query = repository.AsQueryable();
+
+            term = term?.Trim();
+            if (!string.IsNullOrEmpty(term))
+            {
+                query = query.Where(o => o.Title.Contains(term) || o.Description.Contains(term));
+            }
+
+            if (type != null)
+            {
+                query = query.Where(o => o.Type == type);
+            }
+
+            query = query
+                .OrderByDescending(o => o.SearchDateTime)
+                .Take(maxResults);
+
+            var items = await query.ToListAsync();
+            return items;
         }
 
         private static string GetYoutubeId(ResourceId id)
@@ -111,9 +139,28 @@ namespace SkillTestSegfy.Infrastructure.Services.Youtube
         private static bool IsValidItem(YoutubeItem item)
         {
             return item.Type != YoutubeItemType.Unknown
-                && !string.IsNullOrEmpty(item.Id)
+                && !string.IsNullOrEmpty(item.YoutubeId)
                 && !string.IsNullOrEmpty(item.Title)
                 && !string.IsNullOrEmpty(item.ThumbnailUrl);
+        }
+
+        private async Task SaveHistory(IEnumerable<YoutubeItem> items)
+        {
+            var repository = DatabaseContext.Set<YoutubeItem>();
+
+            var toInsert = items.ToList();
+            foreach (var item in items)
+            {
+                var existing = repository.FirstOrDefault(o => o.Type == item.Type && o.YoutubeId == item.YoutubeId);
+                if (existing != null)
+                {
+                    toInsert.Remove(item);
+                    existing.UpdateFrom(item);
+                }
+            }
+
+            await repository.AddRangeAsync(toInsert);
+            await DatabaseContext.SaveChangesAsync();
         }
     }
 }

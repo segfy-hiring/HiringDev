@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SkillTestSegfy.Infrastructure.Database;
 using SkillTestSegfy.Infrastructure.Services.Youtube;
 
 namespace SkillTestSegfy.Web
@@ -15,11 +16,13 @@ namespace SkillTestSegfy.Web
             services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
 
+            services.AddDbContext<DatabaseContext>();
+
             services.AddScoped<IYoutubeApiService, YoutubeApiService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DatabaseContext context)
         {
             if (env.IsDevelopment())
             {
@@ -33,6 +36,8 @@ namespace SkillTestSegfy.Web
             {
                 endpoints.MapDefaultControllerRoute();
             });
+
+            context.Database.EnsureCreated();
         }
     }
 }

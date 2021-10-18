@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using SkillTestSegfy.Infrastructure.Services.Youtube;
+using SkillTestSegfy.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace SkillTestSegfy.Web.Models.Youtube
 
         public string Term { get; set; }
         public YoutubeItemType? Type { get; set; }
-        public long? MaxResults { get; set; }
+        public int? MaxResults { get; set; }
 
         public IEnumerable<YoutubeSearchItemModel> ResponseItems { get; set; }
         public string ResponseMessage { get; set; }
@@ -28,6 +28,7 @@ namespace SkillTestSegfy.Web.Models.Youtube
     {
         public YoutubeSearchItemModel(YoutubeItem item)
         {
+            SearchDateTime = item.SearchDateTime.ToString("g");
             Type = GetTypeStr(item);
             Title = item.Title;
             Description = item.Description;
@@ -36,6 +37,7 @@ namespace SkillTestSegfy.Web.Models.Youtube
             Action = GetActionStr(item);
         }
 
+        public string SearchDateTime { get; }
         public string Type { get; }
         public string Title { get; }
         public string Description { get; }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using SkillTestSegfy.Domain.Entities;
 using SkillTestSegfy.Infrastructure.Services.Youtube;
 using SkillTestSegfy.Web.Models.Youtube;
 using System.Collections.Generic;
@@ -38,6 +39,24 @@ namespace SkillTestSegfy.Web.Controllers
                 model.ResponseMessage = response.Error;
             }
 
+            return View(PrepareModel(model, false));
+        }
+
+        public async Task<IActionResult> History(YoutubeSearchModel model)
+        {
+            var items = await YoutubeApiService.GetHistory(model.Term, maxResults: model.MaxResults ?? 50, type: model.Type);
+
+            model.ResponseItems = items.Select(o => new YoutubeSearchItemModel(o)).ToList();
+            if (!model.ResponseItems.Any())
+            {
+                model.ResponseMessage = "Nenhum resultado encontrado.";
+            }
+
+            return View(PrepareModel(model, true));
+        }
+
+        private static YoutubeSearchModel PrepareModel(YoutubeSearchModel model, bool history)
+        {
             model.AvailableTypes = new List<SelectListItem>
             {
                 new SelectListItem("Tipo: Todos", null, true),
@@ -49,17 +68,12 @@ namespace SkillTestSegfy.Web.Controllers
             model.AvailableMaxResults = new List<SelectListItem>
             {
                 new SelectListItem("Resultados: 5", "5", false),
-                new SelectListItem("Resultados: 15", "15", true),
+                new SelectListItem("Resultados: 15", "15", !history),
                 new SelectListItem("Resultados: 30", "30", false),
-                new SelectListItem("Resultados: 50", "50", false)
+                new SelectListItem("Resultados: 50", "50", history)
             };
 
-            return View(model);
-        }
-
-        public async Task<IActionResult> History()
-        {
-            return View();
+            return model;
         }
     }
 }

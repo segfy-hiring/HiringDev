@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SkillTestSegfy.Domain.Entities;
+using System.Collections.Generic;
 
 namespace SkillTestSegfy.Infrastructure.Services.Youtube
 {
