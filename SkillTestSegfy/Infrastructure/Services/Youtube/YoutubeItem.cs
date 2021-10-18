@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SkillTestSegfy.Infrastructure.Services.YoutubeApi
+namespace SkillTestSegfy.Infrastructure.Services.Youtube
 {
     public enum YoutubeItemType
     {

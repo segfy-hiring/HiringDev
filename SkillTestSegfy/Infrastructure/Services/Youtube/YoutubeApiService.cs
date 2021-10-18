@@ -1,22 +1,26 @@
-﻿using Google.Apis.Services;
+﻿using Google;
+using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
 using Google.Apis.YouTube.v3.Data;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SkillTestSegfy.Infrastructure.Services.YoutubeApi
+namespace SkillTestSegfy.Infrastructure.Services.Youtube
 {
     public class YoutubeApiService : IYoutubeApiService
     {
-        private const string ApiKey = "";
-        private const string ApplicationName = "";
-
         public YoutubeApiService()
         {
             YoutubeService = new YouTubeService(new BaseClientService.Initializer
             {
-                ApiKey = ApiKey,
-                ApplicationName = ApplicationName,
+                // main
+                //ApiKey = Environment.GetEnvironmentVariable("YoutubeApiProjectMain"),
+                //ApplicationName = Environment.GetEnvironmentVariable("YoutubeApiKeyMain"),
+                 
+                // alt
+                ApiKey = Environment.GetEnvironmentVariable("YoutubeApiProjectAlt"),
+                ApplicationName = Environment.GetEnvironmentVariable("YoutubeApiKeyAlt"),
             });
         }
 
@@ -64,8 +68,20 @@ namespace SkillTestSegfy.Infrastructure.Services.YoutubeApi
 
                 return new YoutubeSearchResponse(true, items, null);
             }
-            catch
+            catch (Exception e)
             {
+                if (e is GoogleApiException apiException)
+                {
+                    if (apiException.Error.Message.Contains("The request cannot be completed because you have exceeded your"))
+                    {
+                        return new YoutubeSearchResponse(false, null, "A chave de API do YouTube excedeu a cota de uso diário. Não é possível realizar mais pesquisas.");
+                    }
+                    else if (apiException.Error.Message.Contains("API key expired"))
+                    {
+                        return new YoutubeSearchResponse(false, null, "A chave de API do YouTube é inválida. Não é possível realizar pesquisas.");
+                    }
+                }
+
                 return new YoutubeSearchResponse(false, null, "Houve um erro inesperado na pesquisa. Por favor, tente novamente mais tarde.");
             }
         }

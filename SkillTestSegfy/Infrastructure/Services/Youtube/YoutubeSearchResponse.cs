@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SkillTestSegfy.Infrastructure.Services.YoutubeApi
+namespace SkillTestSegfy.Infrastructure.Services.Youtube
 {
     public class YoutubeSearchResponse
     {

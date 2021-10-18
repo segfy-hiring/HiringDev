@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace SkillTestSegfy.Infrastructure.Services.YoutubeApi
+namespace SkillTestSegfy.Infrastructure.Services.Youtube
 {
     public interface IYoutubeApiService
     {

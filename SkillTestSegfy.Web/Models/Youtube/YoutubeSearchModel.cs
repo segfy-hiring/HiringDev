@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using SkillTestSegfy.Infrastructure.Services.YoutubeApi;
+using SkillTestSegfy.Infrastructure.Services.Youtube;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace SkillTestSegfy.Web.Models.Home
+namespace SkillTestSegfy.Web.Models.Youtube
 {
     public class YoutubeSearchModel
     {
