@@ -11,11 +11,7 @@ namespace SkillTestSegfy
         public static string DatabasePwd => Environment.GetEnvironmentVariable("RDS_PASSWORD");
 
         // main
-        //public static string YoutubeApiKey => Environment.GetEnvironmentVariable("YoutubeApiKey");
-        //public static string YoutubeApiProject => Environment.GetEnvironmentVariable("YoutubeApiProject");
-
-        // alt
-        public static string YoutubeApiKey => Environment.GetEnvironmentVariable("YoutubeApiKeyAlt");
-        public static string YoutubeApiProject => Environment.GetEnvironmentVariable("YoutubeApiProjectAlt");
+        public static string YoutubeApiKey => Environment.GetEnvironmentVariable("YOUTUBE_API_KEY");
+        public static string YoutubeApiProject => Environment.GetEnvironmentVariable("YOUTUBE_API_PROJECT");
     }
 }

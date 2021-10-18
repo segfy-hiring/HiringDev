@@ -33,7 +33,7 @@ namespace SkillTestSegfy.Tests
         [TestMethod]
         public async Task Search_with_max_results()
         {
-            var maxResults = 10;
+            var maxResults = 5;
             var response = await YoutubeApiService.Search("", maxResults, null);
 
             Assert.IsTrue(response.Success);
@@ -50,7 +50,7 @@ namespace SkillTestSegfy.Tests
         {
             // force using "vevo" as the search term,
             // because it is a famous music channel and it will certainly appear at the top of the list
-            var response = await YoutubeApiService.Search("vevo", 10, YoutubeItemType.Video);
+            var response = await YoutubeApiService.Search("vevo", 5, YoutubeItemType.Video);
 
             Assert.IsTrue(response.Success);
             Assert.IsTrue(response.Items.All(o => o.Type == YoutubeItemType.Video));
@@ -64,7 +64,7 @@ namespace SkillTestSegfy.Tests
         [TestMethod]
         public async Task Search_only_channels()
         {
-            var response = await YoutubeApiService.Search("", 10, YoutubeItemType.Channel);
+            var response = await YoutubeApiService.Search("", 5, YoutubeItemType.Channel);
 
             Assert.IsTrue(response.Success);
             Assert.IsTrue(response.Items.All(o => o.Type == YoutubeItemType.Channel));
@@ -78,7 +78,7 @@ namespace SkillTestSegfy.Tests
         [TestMethod]
         public async Task Search_only_playlists()
         {
-            var response = await YoutubeApiService.Search("", 10, YoutubeItemType.Playlist);
+            var response = await YoutubeApiService.Search("", 5, YoutubeItemType.Playlist);
 
             Assert.IsTrue(response.Success);
             Assert.IsTrue(response.Items.All(o => o.Type == YoutubeItemType.Playlist));
@@ -92,7 +92,7 @@ namespace SkillTestSegfy.Tests
         [TestMethod]
         public async Task Search_with_no_results()
         {
-            var response = await YoutubeApiService.Search("GHUUJEDSAKOPDSASHUGYFARTDRTDASIJKLDSA", 10, null);
+            var response = await YoutubeApiService.Search("GHUUJEDSAKOPDSASHUGYFARTDRTDASIJKLDSA", 5, null);
 
             Assert.IsTrue(response.Success);
             Assert.AreEqual(response.Items.Count(), 0);
@@ -106,10 +106,10 @@ namespace SkillTestSegfy.Tests
         [TestMethod]
         public async Task History_must_replace_repeated_items()
         {
-            var response = await YoutubeApiService.Search("PSY - GANGNAM STYLE", 5, YoutubeItemType.Video);
+            var response = await YoutubeApiService.Search("PSY - GANGNAM STYLE", 3, YoutubeItemType.Video);
             Assert.IsTrue(response.Success);
 
-            response = await YoutubeApiService.Search("PSY - GANGNAM STYLE", 5, YoutubeItemType.Video);
+            response = await YoutubeApiService.Search("PSY - GANGNAM STYLE", 3, YoutubeItemType.Video);
             Assert.IsTrue(response.Success);
 
             var repository = DatabaseContext.Set<YoutubeItem>();
