@@ -1,6 +1,8 @@
-﻿using SkillTestSegfy.Infrastructure.Services.YoutubeApi;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SkillTestSegfy.Infrastructure.Services.YoutubeApi;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace SkillTestSegfy.Web.Models.Home
@@ -9,12 +11,18 @@ namespace SkillTestSegfy.Web.Models.Home
     {
         public YoutubeSearchModel()
         {
-            Items = Enumerable.Empty<YoutubeSearchItemModel>();
+            ResponseItems = Enumerable.Empty<YoutubeSearchItemModel>();
         }
 
         public string Term { get; set; }
-        public IEnumerable<YoutubeSearchItemModel> Items { get; set; }
-        public string Message { get; set; }
+        public YoutubeItemType? Type { get; set; }
+        public long? MaxResults { get; set; }
+
+        public IEnumerable<YoutubeSearchItemModel> ResponseItems { get; set; }
+        public string ResponseMessage { get; set; }
+
+        public IEnumerable<SelectListItem> AvailableTypes { get; set; }
+        public IEnumerable<SelectListItem> AvailableMaxResults { get; set; }
     }
 
     public class YoutubeSearchItemModel

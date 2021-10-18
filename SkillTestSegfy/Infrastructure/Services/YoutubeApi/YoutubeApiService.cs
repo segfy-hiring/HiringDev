@@ -1,7 +1,6 @@
 ﻿using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
 using Google.Apis.YouTube.v3.Data;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -23,32 +22,63 @@ namespace SkillTestSegfy.Infrastructure.Services.YoutubeApi
 
         private YouTubeService YoutubeService { get; }
 
-        public async Task<IEnumerable<YoutubeItem>> Search(string term)
+        public async Task<YoutubeSearchResponse> Search(string term, long maxResults, YoutubeItemType? type)
         {
-            var request = YoutubeService.Search.List("snippet");
-            request.Q = term;
-            request.MaxResults = 20;
-
-            var response = await request.ExecuteAsync();
-
-            foreach (var item in response.Items)
+            try
             {
-                var t = item;
-            }
+                var request = YoutubeService.Search.List("snippet");
+                request.Q = term;
+                request.MaxResults = maxResults;
 
-            var items = response.Items
-                .Select(o => new YoutubeItem
+                if (type == YoutubeItemType.Video)
                 {
-                    Id = GetYoutubeId(o.Id),
-                    Type = GetYoutubeType(o.Id.Kind),
-                    Title = o.Snippet?.Title,
-                    Description = o.Snippet?.Description,
-                    ThumbnailUrl = o.Snippet?.Thumbnails?.High?.Url,
-                })
-                .Where(o => o.Type != YoutubeItemType.Unknown)
-                .ToList();
+                    request.Type = "video";
+                }
+                else if (type == YoutubeItemType.Channel)
+                {
+                    request.Type = "channel";
+                }
+                else if (type == YoutubeItemType.Playlist)
+                {
+                    request.Type = "playlist";
+                }
 
-            return items;
+                var response = await request.ExecuteAsync();
+
+                foreach (var item in response.Items)
+                {
+                    var t = item;
+                }
+
+                var items = response.Items
+                    .Select(o => new YoutubeItem
+                    {
+                        Id = GetYoutubeId(o.Id),
+                        Type = GetYoutubeType(o.Id?.Kind),
+                        Title = o.Snippet?.Title,
+                        Description = o.Snippet?.Description,
+                        ThumbnailUrl = o.Snippet?.Thumbnails?.High?.Url,
+                    })
+                    .Where(IsValidItem)
+                    .ToList();
+
+                return new YoutubeSearchResponse(true, items, null);
+            }
+            catch
+            {
+                return new YoutubeSearchResponse(false, null, "Houve um erro inesperado na pesquisa. Por favor, tente novamente mais tarde.");
+            }
+        }
+
+        private static string GetYoutubeId(ResourceId id)
+        {
+            return GetYoutubeType(id?.Kind) switch
+            {
+                YoutubeItemType.Video => id.VideoId,
+                YoutubeItemType.Channel => id.ChannelId,
+                YoutubeItemType.Playlist => id.PlaylistId,
+                _ => null,
+            };
         }
 
         private static YoutubeItemType GetYoutubeType(string kind)
@@ -62,15 +92,12 @@ namespace SkillTestSegfy.Infrastructure.Services.YoutubeApi
             };
         }
 
-        private static string GetYoutubeId(ResourceId id)
+        private static bool IsValidItem(YoutubeItem item)
         {
-            return GetYoutubeType(id.Kind) switch
-            {
-                YoutubeItemType.Video => id.VideoId,
-                YoutubeItemType.Channel => id.ChannelId,
-                YoutubeItemType.Playlist => id.PlaylistId,
-                _ => null,
-            };
+            return item.Type != YoutubeItemType.Unknown
+                && !string.IsNullOrEmpty(item.Id)
+                && !string.IsNullOrEmpty(item.Title)
+                && !string.IsNullOrEmpty(item.ThumbnailUrl);
         }
     }
 }
