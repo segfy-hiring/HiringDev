@@ -8,8 +8,8 @@ namespace SkillTestSegfy.Infrastructure.Services.YoutubeApi
 {
     public class YoutubeApiService : IYoutubeApiService
     {
-        private const string ApiKey = "AIzaSyBQEHRxdlcLP-tMjidzf4DE8uptV5VvFaA";
-        private const string ApplicationName = "SkillTestSegfy";
+        private const string ApiKey = "";
+        private const string ApplicationName = "";
 
         public YoutubeApiService()
         {
