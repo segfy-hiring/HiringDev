@@ -55,10 +55,10 @@ namespace SkillTestSegfy.Infrastructure.Services.Youtube
                     var t = item;
                 }
 
-                var now = DateTime.Now;
+                var utcNow = DateTime.UtcNow;
                 var items = response.Items
                     .Select(o => new YoutubeItem(
-                        now,
+                        utcNow,
                         GetYoutubeType(o.Id?.Kind),
                         GetYoutubeId(o.Id),
                         o.Snippet?.Title,

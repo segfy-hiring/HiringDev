@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using SkillTestSegfy.Domain.Entities;
+using SkillTestSegfy.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace SkillTestSegfy.Web.Models.Youtube
     {
         public YoutubeSearchItemModel(YoutubeItem item)
         {
-            SearchDateTime = item.SearchDateTime.ToString("g");
+            SearchDateTime = DateTimeUtils.ConvertDateTimeToUser(item.SearchDateTime);
             Type = GetTypeStr(item);
             Title = item.Title;
             Description = item.Description;
