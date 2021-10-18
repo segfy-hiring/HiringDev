@@ -15,12 +15,12 @@ namespace SkillTestSegfy.Infrastructure.Services.Youtube
             YoutubeService = new YouTubeService(new BaseClientService.Initializer
             {
                 // main
-                //ApiKey = Environment.GetEnvironmentVariable("YoutubeApiProjectMain"),
-                //ApplicationName = Environment.GetEnvironmentVariable("YoutubeApiKeyMain"),
-                 
+                //ApiKey = Environment.GetEnvironmentVariable("YoutubeApiKeyMain"),
+                //ApplicationName = Environment.GetEnvironmentVariable("YoutubeApiProjectMain"),
+
                 // alt
-                ApiKey = Environment.GetEnvironmentVariable("YoutubeApiProjectAlt"),
-                ApplicationName = Environment.GetEnvironmentVariable("YoutubeApiKeyAlt"),
+                ApiKey = Environment.GetEnvironmentVariable("YoutubeApiKeyAlt"),
+                ApplicationName = Environment.GetEnvironmentVariable("YoutubeApiProjectAlt"),
             });
         }
 
