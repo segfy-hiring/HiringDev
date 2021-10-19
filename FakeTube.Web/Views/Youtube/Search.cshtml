@@ -1,0 +1,107 @@
+﻿@model FakeTube.Web.Models.Youtube.YoutubeSearchModel
+@{
+    ViewData["Active-Page"] = "search";
+    ViewData["Title"] = "Skill Test Segfy - Pesquisar";
+    Layout = "_Layout";
+}
+@using (Html.BeginForm(FormMethod.Get))
+{
+    <div class="loading" style="display: none;">
+        <div class="spinner-grow text-primary"></div>
+    </div>
+
+    <div class="card" style="margin-top: 15px;">
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-12" style="text-align: center;">
+                    <img src="~/img/youtube-logo.png" style="width: 300px; margin: 15px 0;" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="input-group">
+                        @Html.EditorFor(o => o.Term, new { htmlAttributes = new { @class = "form-control", placeholder = "Pesquisar no YouTube" } })
+                        <button class="btn btn-outline-secondary" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    @Html.DropDownListFor(o => o.Type, Model.AvailableTypes, new { @class = "form-control" })
+                </div>
+                <div class="col-6">
+                    @Html.DropDownListFor(o => o.MaxResults, Model.AvailableMaxResults, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top: 15px;">
+        <div class="card-body">
+            @if (Model.ResponseItems != null && Model.ResponseItems.Any())
+            {
+                <div class="row" style="margin-top: calc((var(--bs-gutter-x) * .5) * -2);">
+                    @foreach (var item in Model.ResponseItems)
+                    {
+                        <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch" style="margin-top: calc((var(--bs-gutter-x) * .5) * 2);">
+                            <div class="card" style="width: 100%;">
+                                <img src="@item.ThumbnailUrl" class="card-img-top" style=" height: 190px; object-fit: cover;">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="font-size: 16px;">
+                                        <span class="badge bg-dark" style="font-size: 10px; vertical-align: 2px;">@Html.Raw(@item.Type)</span>
+                                        @Html.Raw(item.Title)
+                                    </h5>
+                                    <p class="card-text" style="font-size: 12px;">@Html.Raw(@item.Description)</p>
+                                    <a href="@item.Url" target="_blank" class="btn btn-primary mt-auto" style="width: fit-content; font-size: 14px;">@Html.Raw(@item.Action)</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <span style="color: darkgray;">@Html.Raw(@Model.ResponseMessage)</span>
+            }
+        </div>
+    </div>
+
+    <style>
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999999;
+            background-color: rgba(0,0,0,0.3);
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(function () {
+            var $form = $('form');
+            $form.submit(function () {
+                $('.loading').show();
+            });
+
+            $('#@Html.IdFor(o => o.Type)').change(function () {
+                $form.submit();
+            });
+
+            $('#@Html.IdFor(o => o.MaxResults)').change(function () {
+                $form.submit();
+            });
+
+            $('#@Html.IdFor(o => o.Term)').focus();
+        });
+    </script>
+}
