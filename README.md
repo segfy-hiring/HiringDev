@@ -1,4 +1,4 @@
-# FakeTube
+![FakeTube...](FakeTube.Web/wwwroot/img/faketube-logo.png?raw=true "FakeTube")
 
 Teste de skills técnicos para a empresa Segfy.
 
@@ -6,7 +6,7 @@ Teste de skills técnicos para a empresa Segfy.
 - **Back-end:** ASP.NET Core 5.0, EF Core 5.0, MySQL, Google Youtube API v3.
 - **Front-end:** Razor, Bootstrap, jQuery, Font Awesome.
 - **Tests:** MSTest, SQLite.
-- **Deploy:** AWS Elastic Beanstalk ([link](http://skilltestsegfy-env.eba-gr2rya2d.sa-east-1.elasticbeanstalk.com/)).
+- **Deploy:** AWS Elastic Beanstalk ([link](http://faketube-env.eba-upsrpavq.sa-east-1.elasticbeanstalk.com/)).
 
 **Importante:** caso receba a mensagem *"A chave de API do YouTube excedeu a cota de uso diário"*, me avise para que eu possa substitui-la. A cota gratuita é pequena para acessar os detalhes dos vídeos e acaba rapidamente durante testes repetitivos.
 
