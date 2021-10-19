@@ -1,4 +1,4 @@
-![FakeTube...](FakeTube.Web/wwwroot/img/faketube-logo.png?raw=true "FakeTube")
+[![FakeTube...](FakeTube.Web/wwwroot/img/faketube-logo.png?raw=true "FakeTube")](http://faketube-env.eba-upsrpavq.sa-east-1.elasticbeanstalk.com/)
 
 Teste de skills técnicos para a empresa Segfy.
 
