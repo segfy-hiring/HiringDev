@@ -1,4 +1,4 @@
-# FakeTube
+![FakeTube...](FakeTube.Web/wwwroot/img/faketube-logo.png?raw=true "FakeTube")
 
 Teste de skills técnicos para a empresa Segfy.
 
