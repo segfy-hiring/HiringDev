@@ -23,7 +23,7 @@ namespace FakeTube.Utils
         private static CultureInfo CulturePtBr { get; }
         private static TimeZoneInfo TimeZonePtBr { get; }
 
-        public static string ConvertDateTimeToUser(DateTime dateTime)
+        public static string FormatForUser(DateTime dateTime)
         {
             dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
             dateTime = TimeZoneInfo.ConvertTimeFromUtc(dateTime, TimeZonePtBr);

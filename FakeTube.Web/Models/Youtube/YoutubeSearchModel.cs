@@ -29,7 +29,7 @@ namespace FakeTube.Web.Models.Youtube
     {
         public YoutubeSearchItemModel(YoutubeItem item)
         {
-            SearchDateTime = DateTimeUtils.ConvertDateTimeToUser(item.SearchDateTime);
+            SearchDateTime = DateTimeUtils.FormatForUser(item.SearchDateTime);
             Type = GetTypeStr(item);
             Title = item.Title;
             Description = item.Description;
