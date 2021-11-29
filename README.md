@@ -1,4 +1,47 @@
-# Desafio técnico para desenvolvedores
+[![FakeTube...](FakeTube.Web/wwwroot/img/faketube-logo.png?raw=true "FakeTube")](http://faketube-env.eba-upsrpavq.sa-east-1.elasticbeanstalk.com/)
+
+Teste de skills técnicos para a empresa Segfy.
+
+## Tecnologias utilizadas
+- **Back-end:** ASP.NET Core 5.0, EF Core 5.0, MySQL, Google Youtube API v3.
+- **Front-end:** Razor, Bootstrap, jQuery, Font Awesome.
+- **Tests:** MSTest, SQLite.
+- **Deploy:** AWS Elastic Beanstalk (link desabilitado).
+
+**Importante:** caso receba a mensagem *"A chave de API do YouTube excedeu a cota de uso diário"*, me avise para que eu possa substitui-la. A cota gratuita é pequena para acessar os detalhes dos vídeos e acaba rapidamente durante testes repetitivos.
+
+## Executar o projeto em ambiente próprio
+
+São necessárias as definições de algumas váriaveis de ambiente para o funcionamento do banco de dados e da API do Youtube.
+
+```
+RDS_HOSTNAME=your_mysql_host
+RDS_PORT=your_mysql_port
+RDS_DB_NAME=your_mysql_schema
+RDS_USERNAME=your_mysql_user
+RDS_PASSWORD=your_mysql_pwd
+        
+YOUTUBE_API_KEY=your_key
+YOUTUBE_API_PROJECT=your_project_name
+```
+
+Também é póssível inserir os valores `hardcoded` manualmente na classe `ConfigManager` (Libraries/SkillTestSegfy/ConfigManager.cs).
+
+```
+public class ConfigManager
+{
+    //public static string DatabaseHost => Environment.GetEnvironmentVariable("RDS_HOSTNAME");
+    public static string DatabaseHost => "localhost";
+    
+    //public static string DatabasePort => Environment.GetEnvironmentVariable("RDS_PORT");
+    public static string DatabasePort => "3306";
+    
+    [...]
+}
+```
+
+
+## [Descrição Original] Desafio técnico para desenvolvedores
 
 Construa uma nova solução restful, utilizando no backend e no front os frameworks de sua preferência, a qual deverá conectar na API do YouTube e disponibilizar as seguintes funcionalidades:
 
@@ -14,7 +57,3 @@ Alguns requisitos:
 - Utilizar MongoDB,  MySQL ou Postgres;
 - O deploy deve ser realizado, preferencialmente na AWS;
 - A aplicação precisa ter testes automatizados.
-
-Quando terminar, faça um Pull Request neste repo e avise-nos por email.
-
-**IMPORTANTE:** se você não conseguir finalizar o teste, por favor nos diga o motivo e descreva quais foram as suas dificuldades. Claro que você também pode sugerir uma outra abordagem para avaliarmos seus skills técnicos, mas é com você para vender seu peixe, mostrar-nos do que é capaz.
