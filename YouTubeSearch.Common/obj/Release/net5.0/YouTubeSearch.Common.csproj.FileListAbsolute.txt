@@ -1,0 +1,11 @@
+C:\Users\insight\Desktop\Pessoal\YouTube\YoutTubeSearch\YouTubeSearch.Common\bin\Release\net5.0\YouTubeSearch.Common.deps.json
+C:\Users\insight\Desktop\Pessoal\YouTube\YoutTubeSearch\YouTubeSearch.Common\bin\Release\net5.0\YouTubeSearch.Common.dll
+C:\Users\insight\Desktop\Pessoal\YouTube\YoutTubeSearch\YouTubeSearch.Common\bin\Release\net5.0\ref\YouTubeSearch.Common.dll
+C:\Users\insight\Desktop\Pessoal\YouTube\YoutTubeSearch\YouTubeSearch.Common\bin\Release\net5.0\YouTubeSearch.Common.pdb
+C:\Users\insight\Desktop\Pessoal\YouTube\YoutTubeSearch\YouTubeSearch.Common\obj\Release\net5.0\YouTubeSearch.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\insight\Desktop\Pessoal\YouTube\YoutTubeSearch\YouTubeSearch.Common\obj\Release\net5.0\YouTubeSearch.Common.AssemblyInfoInputs.cache
+C:\Users\insight\Desktop\Pessoal\YouTube\YoutTubeSearch\YouTubeSearch.Common\obj\Release\net5.0\YouTubeSearch.Common.AssemblyInfo.cs
+C:\Users\insight\Desktop\Pessoal\YouTube\YoutTubeSearch\YouTubeSearch.Common\obj\Release\net5.0\YouTubeSearch.Common.csproj.CoreCompileInputs.cache
+C:\Users\insight\Desktop\Pessoal\YouTube\YoutTubeSearch\YouTubeSearch.Common\obj\Release\net5.0\YouTubeSearch.Common.dll
+C:\Users\insight\Desktop\Pessoal\YouTube\YoutTubeSearch\YouTubeSearch.Common\obj\Release\net5.0\ref\YouTubeSearch.Common.dll
+C:\Users\insight\Desktop\Pessoal\YouTube\YoutTubeSearch\YouTubeSearch.Common\obj\Release\net5.0\YouTubeSearch.Common.pdb

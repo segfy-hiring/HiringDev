@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "X9gLasQ/wsAdtgH+/Uy0YidtOb3xW80Ahj9OzVr7hE34M2RO349vtD0dSpfStmUsf+zk+2TaVST/GO2jk4z7vw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\insight\\Desktop\\teste_segfy\\HiringDev\\YouTubeSearch.Core\\YouTubeSearch.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\insight\\.nuget\\packages\\mysqlconnector\\2.1.0\\mysqlconnector.2.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
